@@ -1,8 +1,8 @@
 """Pydantic models and Enums for the Composio 100-App Research Agent."""
 
 from enum import Enum
-from typing import List, Optional
-from pydantic import BaseModel, Field
+from typing import List, Optional, Any
+from pydantic import BaseModel, Field, field_validator
 
 
 class Category(str, Enum):
@@ -96,9 +96,17 @@ class PrimaryBlocker(str, Enum):
 class EvidenceItem(BaseModel):
     field: str
     url: str
-    quote: str = Field(description="Verbatim excerpt from the fetched page, max 200 chars", max_length=200)
+    quote: str = Field(description="Verbatim excerpt from the fetched page, max 200 chars")
     retrieved_at: str
     is_official_domain: bool = False
+
+    @field_validator("quote", mode="before")
+    @classmethod
+    def sanitize_quote(cls, v: Any) -> str:
+        s = str(v) if v is not None else ""
+        if len(s) > 200:
+            return s[:200]
+        return s
 
 
 class AppResearchResult(BaseModel):
@@ -106,7 +114,7 @@ class AppResearchResult(BaseModel):
     category: Category
     vendor_url: str
     identity_confidence: Confidence = Confidence.high
-    description: str = Field(description="Concise description <= 140 chars", max_length=140)
+    description: str = Field(description="Concise description <= 140 chars")
     auth_methods: List[AuthMethod] = Field(default_factory=list)
     access_model: AccessModel = AccessModel.unknown
     gate_detail: str = Field(default="", description="e.g. 'Lite plan+', 'App Review', 'Enterprise only'")
@@ -120,6 +128,14 @@ class AppResearchResult(BaseModel):
     evidence: List[EvidenceItem] = Field(default_factory=list)
     confidence: Confidence = Confidence.medium
     needs_human: bool = False
+
+    @field_validator("description", mode="before")
+    @classmethod
+    def sanitize_description(cls, v: Any) -> str:
+        s = str(v) if v is not None else ""
+        if len(s) > 140:
+            return s[:140]
+        return s
 
 
 class AppInput(BaseModel):
