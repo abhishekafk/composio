@@ -48,7 +48,6 @@ def extract_base_domain(url: str) -> str:
         url = "https://" + url
     try:
         netloc = urlparse(url).netloc.lower()
-        # Remove port if present
         netloc = netloc.split(":")[0]
         parts = netloc.split(".")
         if len(parts) >= 2:
@@ -56,6 +55,47 @@ def extract_base_domain(url: str) -> str:
         return netloc
     except Exception:
         return ""
+
+
+def check_namespace_matches_vendor(namespace: str, vendor_url: str, app_name: str) -> bool:
+    """Check if the MCP namespace's domain/org plausibly matches the app's vendor domain/repo."""
+    if not namespace:
+        return False
+    ns_parts = namespace.lower().split(".")
+    app_clean = re.sub(r"\(.*?\)", "", app_name).strip()
+    app_token = normalize_token(app_clean)
+
+    if not vendor_url.startswith("http://") and not vendor_url.startswith("https://"):
+        vendor_url = "https://" + vendor_url
+
+    parsed = urlparse(vendor_url)
+    domain = parsed.netloc.lower()
+    path = parsed.path.lower()
+
+    # If GitHub repository vendor URL
+    if "github.com" in domain:
+        parts = [p for p in path.split("/") if p]
+        if parts:
+            gh_owner = normalize_token(parts[0])
+            if "github" in namespace.lower() and gh_owner in [normalize_token(p) for p in ns_parts]:
+                return True
+
+    domain_parts = domain.split(".")
+    if len(domain_parts) >= 2:
+        root_domain = domain_parts[-2]
+    else:
+        root_domain = domain
+    root_token = normalize_token(root_domain)
+
+    # Reverse DNS or domain token check: e.g. com.salesforce or dev.shopify
+    generic = {"com", "org", "io", "ai", "dev", "co", "app", "github", "net", "gitlab"}
+    for p in ns_parts:
+        p_norm = normalize_token(p)
+        if p_norm not in generic and len(p_norm) >= 3:
+            if p_norm == root_token or p_norm == app_token:
+                return True
+    return False
+
 
 
 # ---------------------------------------------------------------------------
@@ -134,6 +174,16 @@ def match_composio_toolkits(apps_df: pd.DataFrame, catalog_data: Dict[str, Any])
             elif isinstance(c, str):
                 categories.append(c)
 
+        # Toolkit kind detection
+        toolkit_type = it.get("toolkit_type", "")
+        is_mcp = (
+            toolkit_type == "mcp" or
+            slug.endswith("_mcp") or
+            name.endswith(" MCP") or
+            normalize_token(slug).endswith("mcp")
+        )
+        toolkit_kind = "mcp_variant" if is_mcp else "native"
+
         indexed_toolkits.append({
             "raw": it,
             "slug": slug,
@@ -142,6 +192,7 @@ def match_composio_toolkits(apps_df: pd.DataFrame, catalog_data: Dict[str, Any])
             "norm_name": normalize_token(name),
             "norm_app": normalize_token(app_field),
             "domain": base_domain,
+            "toolkit_kind": toolkit_kind,
             "auth_schemes": it.get("auth_schemes", []),
             "composio_managed_auth_schemes": it.get("composio_managed_auth_schemes", []),
             "tools_count": meta.get("tools_count", 0),
@@ -218,6 +269,7 @@ def match_composio_toolkits(apps_df: pd.DataFrame, catalog_data: Dict[str, Any])
                 candidate_summary = {
                     "slug": it["slug"],
                     "name": it["name"],
+                    "toolkit_kind": it["toolkit_kind"],
                     "auth_schemes": it["auth_schemes"],
                     "composio_managed_auth_schemes": it["composio_managed_auth_schemes"],
                     "tools_count": it["tools_count"],
@@ -227,8 +279,12 @@ def match_composio_toolkits(apps_df: pd.DataFrame, catalog_data: Dict[str, Any])
                 }
                 matched_candidates.append(candidate_summary)
 
-        # Prioritize exact matches over fuzzy
-        matched_candidates.sort(key=lambda c: (0 if c["match_confidence"] == "exact" else 1, -c["tools_count"]))
+        # Prioritize exact matches over fuzzy, and prefer native over mcp_variant when tied
+        matched_candidates.sort(key=lambda c: (
+            0 if c["match_confidence"] == "exact" else 1,
+            0 if c["toolkit_kind"] == "native" else 1,
+            -c["tools_count"]
+        ))
 
         primary = matched_candidates[0] if matched_candidates else None
         overall_conf = primary["match_confidence"] if primary else "none"
@@ -240,6 +296,7 @@ def match_composio_toolkits(apps_df: pd.DataFrame, catalog_data: Dict[str, Any])
             "match_confidence": overall_conf,
             "slug": primary["slug"] if primary else None,
             "name": primary["name"] if primary else None,
+            "toolkit_kind": primary["toolkit_kind"] if primary else None,
             "auth_schemes": primary["auth_schemes"] if primary else [],
             "composio_managed_auth_schemes": primary["composio_managed_auth_schemes"] if primary else [],
             "tools_count": primary["tools_count"] if primary else 0,
@@ -293,7 +350,7 @@ def fetch_mcp_registry_for_app(app_name: str, force: bool = False, delay_sec: fl
     return data
 
 
-def extract_mcp_candidates(app_name: str, registry_response: Dict[str, Any]) -> List[Dict[str, Any]]:
+def extract_mcp_candidates(app_name: str, vendor_url: str, registry_response: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Extract candidate servers, their namespaces, remote URLs, and repository details."""
     servers = registry_response.get("servers", [])
     clean_app = re.sub(r"\(.*?\)", "", app_name).strip()
@@ -333,9 +390,11 @@ def extract_mcp_candidates(app_name: str, registry_response: Dict[str, Any]) -> 
             is_relevant = False
 
         if is_relevant:
+            ns_matches = check_namespace_matches_vendor(namespace, vendor_url, app_name)
             candidates.append({
                 "name": server_name,
                 "namespace": namespace,
+                "namespace_matches_vendor": ns_matches,
                 "description": desc[:200] if desc else "",
                 "repository_url": repo_url,
                 "remotes": remotes,
@@ -355,15 +414,18 @@ def pull_mcp_registry(apps_df: pd.DataFrame, force: bool = False) -> List[Dict[s
     for idx, row in apps_df.iterrows():
         app_id = int(row["id"])
         app_name = str(row["app"])
+        vendor_url = str(row["vendor_url"]) if pd.notna(row["vendor_url"]) else ""
 
         raw_resp = fetch_mcp_registry_for_app(app_name, force=force)
-        candidates = extract_mcp_candidates(app_name, raw_resp)
+        candidates = extract_mcp_candidates(app_name, vendor_url, raw_resp)
 
         has_hit = len(candidates) > 0
+        has_vendor_mcp = any(c.get("namespace_matches_vendor", False) for c in candidates)
         record = {
             "app_id": app_id,
             "app": app_name,
             "has_mcp_hit": has_hit,
+            "has_vendor_mcp": has_vendor_mcp,
             "server_count": len(candidates),
             "candidates": candidates,
             "retrieved_at": now_iso,
