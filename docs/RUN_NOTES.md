@@ -63,3 +63,26 @@ Phase 4 operated with four rotating Groq API keys (`GROQ_API_KEY`, `GROQ_API_KEY
 - **Rule C (LLM Verifier)**: 37 modifications (rejected ungrounded claims where page excerpts provided insufficient evidence, corrected hallucinated MCP claims).
 - **Rule D (Targeted Domain Re-research)**: 64 modifications (re-read cached official docs and fetched vendor developer pages to resolve unknown access models and authentication methods).
 - **Rule E (Dedicated MCP Check)**: Corrected official MCP over-attributions across 26 apps down to verified registry or vendor claims.
+
+---
+
+## Phase v3 (Strict Evidence Entailment & Dedicated MCP Check) Execution Notes
+
+### 1. Key Pool Architecture & Model Rotation
+Phase v3 maintained 4 rotating Groq API keys with strict JSON schema parsing and quota resilience:
+- **Primary Model**: `openai/gpt-oss-120b` (88 apps, 88.0%)
+- **Fallback Model**: `openai/gpt-oss-20b` (12 apps, 12.0% - engaged seamlessly when all four keys hit 120B rolling cooldowns)
+- **Security & Metadata Logging**: Each record logs `key_idx` (`1`..`4`) and `verifier_model` in `_run_meta.v3_verification`.
+
+### 2. Tavily Global Cap Compliance
+- **Initial Cached Queries (pre-v3)**: 226 queries.
+- **Dedicated MCP & Targeted Access Queries Added**: 74 queries.
+- **Total Cached Queries**: Exactly 300 queries (100% compliant with the 300 global search cap).
+- **Remaining Tavily Monthly Free Tier Credits**: 700 / 1,000 requests.
+
+### 3. Core Architectural Adjustments in v3
+- **Rule 1 (MCP Step for All 100 Apps)**: Executed vendor-domain queries `"<app> MCP server"` across all apps and cross-referenced the MCP registry benchmark. 61 apps officially verified with vendor-domain quotes, 10 apps confirmed `none_found`, and 29 apps flagged `unknown` (where domain restrictions hit search caps).
+- **Rule 2 (Strict Evidence Entailment)**: Rejected all access model claims where quotes only mentioned OAuth or app creation without explicitly proving credential acquisition barriers, pricing tiers, or approval reviews.
+- **Rule 3 (Strict Buildability Derivation)**: Derived buildability strictly when BOTH `access_model` and `auth_methods` had verified vendor-domain quotes. All ungrounded buildability claims safely reset to `unknown`.
+- **Rule 4 (Composio Catalog Independence)**: Discontinued injecting authentication methods from the Composio catalog benchmark. Benchmarks are now used strictly to flag disagreements via `composio_disagrees: true`.
+- **Rule 5 (Conservative needs_human)**: `needs_human: true` asserted for 94 of 100 apps due to strict vendor quote requirements on access and buildability.
