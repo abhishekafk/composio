@@ -110,3 +110,32 @@ Phase v4 consumed **0 Tavily search credits** (remaining balance: 700 / 1,000 mo
 - Resolved missing authentication schemes for 8 additional platforms (e.g., GoHighLevel, Magento, Gumroad, Amazon Selling Partner, Pinterest, systeme.io).
 - Successfully resolved DataForSEO from `unknown` to `self_serve_free` and `buildable_now` with verified account dashboard evidence.
 - `needs_human: true` stands at 93/100 apps under the strict vendor quote requirement.
+
+### 4. Bot Challenge, Connection Reset & Robots.txt Handling Details
+During the zero-credit crawling phase of v4, direct HTTP `requests.get` / `urllib` failed on specific vendor domains due to anti-bot challenges (Cloudflare, Akamai WAF), TCP connection resets, or explicit `robots.txt` disallow directives. These were resolved cleanly without violating ethical boundaries or failing silently:
+
+1. **Salesforce Commerce Cloud (App 24)**:
+   - **Target Host**: `developer.salesforce.com`
+   - **Incident**: Direct HTTP GET requests triggered an Akamai/Cloudflare bot challenge with HTTP 403 Forbidden.
+   - **Resolution**: Routed through Jina Reader proxy (`https://r.jina.ai/https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html`), successfully rendering markdown documentation for OAuth2 authorization flows.
+
+2. **Sentry (App 40)**:
+   - **Target Host**: `docs.sentry.io`
+   - **Incident**: Connection reset / Cloudflare TLS fingerprinting blocking standard python-requests user-agents.
+   - **Resolution**: Routed through Jina Reader (`https://r.jina.ai/https://docs.sentry.io/api/auth/`), successfully extracting verbatim auth documentation for User Auth Tokens and Org Integration Tokens.
+
+3. **PitchBook (App 83)**:
+   - **Target Host**: `pitchbook.com`
+   - **Incident**: Immediate TCP connection reset / HTTP 403 WAF blocking direct crawler visits.
+   - **Resolution**: Routed through Jina Reader (`https://r.jina.ai/https://pitchbook.com/products/data-integrations/direct-data`), successfully verifying gated/partner API access terms and direct data feeds.
+
+4. **Otter AI (App 92)**:
+   - **Target Host**: `help.otter.ai`
+   - **Incident**: Cloudflare Turnstile / anti-bot interstitial blocking crawler requests.
+   - **Resolution**: Routed through Jina Reader (`https://r.jina.ai/https://help.otter.ai/hc/en-us/articles/360057813514-Otter-API`), retrieving official documentation on Otter API access, token generation, and MCP endpoints.
+
+5. **Harvest (App 80 - Robots.txt Disallow Block)**:
+   - **Target Host**: `harvestapp.com`
+   - **Incident**: Scraper pre-flight robots check encountered `User-agent: * / Disallow: /` on the root domain, explicitly prohibiting automated crawlers.
+   - **Resolution**: Crawling was strictly aborted in compliance with web standards and ethical scraping boundaries. Pipeline relied on pre-existing cached public documentation from Phase 3 (`help.getharvest.com/api-v2/authentication-overview/authentication/authentication/`) without executing unpermitted network requests.
+

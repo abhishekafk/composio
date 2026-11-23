@@ -1,0 +1,82 @@
+app,field,agent_value,gold_value,outcome,evidence_url
+Pipedrive,auth_methods,"[""oauth2""]","[""api_key"", ""oauth2""]",partial,https://developers.pipedrive.com/docs/api/v1/Oauth
+Close,auth_methods,[],"[""api_key"", ""oauth2""]",unanswered,https://endgrate.com/blog/how-to-create-or-update-leads-with-the-close-api-in-javascript
+Gorgias,auth_methods,"[""oauth2""]","[""api_key"", ""oauth2""]",partial,https://developers.gorgias.com/llms.txt
+Telegram,auth_methods,"[""oauth2"", ""api_key""]","[""other""]",partial,https://core.telegram.org/widgets/login
+Pinterest,auth_methods,"[""oauth2"", ""bearer_token"", ""basic""]","[""oauth2""]",partial,https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization.md
+SendGrid,auth_methods,[],"[""api_key""]",unanswered,https://mindcloud.co/docs/universal/rest/sendgrid/latest/introduction/authentication
+WooCommerce,auth_methods,"[""api_key""]","[""basic"", ""oauth1""]",wrong,https://developer.woocommerce.com/docs/apis/rest-api/authentication
+SE Ranking,auth_methods,[],"[""api_key""]",unanswered,No evidence URL
+MrScraper,auth_methods,[],"[""api_key"", ""oauth2""]",unanswered,https://docs.mrscraper.com/docs/api/authentication
+Bright Data,auth_methods,[],"[""bearer_token"", ""basic""]",unanswered,https://docs.brightdata.com/api-reference/authentication
+GitHub,auth_methods,"[""oauth2""]","[""bearer_token"", ""oauth2""]",partial,https://docs.github.com/en/rest/quickstart?apiVersion=2026-03-10
+Supabase,auth_methods,"[""api_key"", ""bearer_token"", ""oauth2""]","[""bearer_token"", ""oauth2""]",partial,https://supabase.com/docs/guides/getting-started/api-keys
+Neo4j,auth_methods,"[""basic"", ""bearer_token""]","[""oauth2"", ""basic"", ""bearer_token""]",partial,https://neo4j.com/docs/http-api/current/authentication-authorization
+Monday.com,auth_methods,"[""api_key"", ""oauth2""]","[""bearer_token"", ""oauth2""]",partial,https://developer.monday.com/api-reference/docs/authentication
+Binance,auth_methods,[],"[""signed_request"", ""api_key""]",unanswered,https://mwlang.github.io/binance
+Ramp,auth_methods,"[""oauth2"", ""basic""]","[""oauth2""]",partial,https://docs.ramp.com/llms-guides/authorization.txt
+Reducto,auth_methods,"[""api_key""]","[""bearer_token""]",wrong,https://docs.reducto.ai/quickstart
+Devin,auth_methods,"[""api_key""]","[""bearer_token""]",wrong,https://docs.devin.ai/api-reference/authentication
+Mermaid CLI,auth_methods,[],"[""none""]",unanswered,https://brew.sh/formula/mermaid-cli
+YouTube Transcript,auth_methods,"[""bearer_token""]","[""bearer_token"", ""oauth2""]",partial,https://transcriptapi.com/docs/getting-started/curl/
+DealCloud,auth_methods,"[""api_key""]","[""oauth2""]",wrong,https://api.docs.dealcloud.com/docs/apikeys
+Gladly,auth_methods,[],"[""basic""]",unanswered,https://www.getmacha.com/blog/gladly-api-explained
+Ahrefs,auth_methods,"[""bearer_token""]","[""api_key""]",wrong,https://docs.ahrefs.com/en/api/docs/api-keys-creation-and-management
+PitchBook,auth_methods,[],"[""api_key""]",unanswered,None
+Otter AI,auth_methods,"[""bearer_token"", ""oauth2""]","[""oauth2""]",partial,https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API
+Grain,auth_methods,"[""bearer_token""]","[""bearer_token"", ""oauth2""]",partial,https://developers.grain.com
+Monday.com,official_mcp,"""unknown""","""official""",unanswered,No evidence URL
+Coda,official_mcp,"""unknown""","""official""",unanswered,No evidence URL
+Stripe,official_mcp,"""unknown""","""official""",unanswered,No evidence URL
+Reducto,official_mcp,"""unknown""","""official""",unanswered,No evidence URL
+Devin,official_mcp,"""unknown""","""official""",unanswered,https://docs.devin.ai
+YouTube Transcript,official_mcp,"""unknown""","""official""",unanswered,No evidence URL
+Otter AI,official_mcp,"""unknown""","""official""",unanswered,No evidence URL
+Intercom,access_coarse,"""unknown""","""self_serve""",unanswered,https://developers.intercom.com/docs/build-an-integration/learn-more/authentication
+Pylon,access_coarse,"""unknown""","""gated""",unanswered,No evidence URL
+LiveAgent,access_coarse,"""unknown""","""self_serve""",unanswered,https://www.liveagent.com/pricing
+Zoho Cliq,access_coarse,"""unknown""","""self_serve""",unanswered,No evidence URL
+systeme.io,access_coarse,"""unknown""","""self_serve""",unanswered,https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io
+SendGrid,access_coarse,"""unknown""","""self_serve""",unanswered,No evidence URL
+WooCommerce,access_coarse,"""unknown""","""self_serve""",unanswered,https://developer.woocommerce.com/docs/apis/rest-api/authentication
+Squarespace,access_coarse,"""approval_required""","""self_serve""",wrong,https://developers.squarespace.com/commerce-apis/oauth
+Ecwid,access_coarse,"""unknown""","""self_serve""",unanswered,https://docs.ecwid.com/get-started/make-your-first-api-request
+SE Ranking,access_coarse,"""unknown""","""self_serve""",unanswered,No evidence URL
+MrScraper,access_coarse,"""unknown""","""self_serve""",unanswered,https://mrscraper.com/pricing
+Bright Data,access_coarse,"""unknown""","""self_serve""",unanswered,No evidence URL
+Supabase,access_coarse,"""unknown""","""self_serve""",unanswered,No evidence URL
+Notion,access_coarse,"""unknown""","""self_serve""",unanswered,https://developers.notion.com/guides/authorization/overview
+Monday.com,access_coarse,"""unknown""","""self_serve""",unanswered,No evidence URL
+Ramp,access_coarse,"""unknown""","""gated""",unanswered,No evidence URL
+Mermaid CLI,access_coarse,"""unknown""","""none_needed""",unanswered,No evidence URL
+YouTube Transcript,access_coarse,"""unknown""","""self_serve""",unanswered,https://supadata.ai/blog/best-youtube-transcript-api
+DealCloud,access_coarse,"""unknown""","""gated""",unanswered,No evidence URL
+Gladly,access_coarse,"""unknown""","""gated""",unanswered,No evidence URL
+Google Ads,access_coarse,"""unknown""","""gated""",unanswered,https://apis.io/plans/google-ads/google-ads-plans-pricing
+Amazon Selling Partner,access_coarse,"""unknown""","""gated""",unanswered,No evidence URL
+Ahrefs,access_coarse,"""unknown""","""self_serve""",unanswered,No evidence URL
+PitchBook,access_coarse,"""unknown""","""gated""",unanswered,None
+Grain,access_coarse,"""unknown""","""self_serve""",unanswered,No evidence URL
+Pylon,access_model,"""unknown""","""customer_only""",unanswered,No evidence URL
+LiveAgent,access_model,"""unknown""","""self_serve_trial""",unanswered,https://www.liveagent.com/pricing
+Squarespace,access_model,"""approval_required""","""self_serve_paid_plan""",partial,https://developers.squarespace.com/commerce-apis/oauth
+Ecwid,access_model,"""unknown""","""self_serve_paid_plan""",unanswered,https://docs.ecwid.com/get-started/make-your-first-api-request
+SE Ranking,access_model,"""unknown""","""self_serve_paid_plan""",unanswered,No evidence URL
+Bright Data,access_model,"""unknown""","""self_serve_free""",unanswered,No evidence URL
+Monday.com,access_model,"""unknown""","""self_serve_free""",unanswered,No evidence URL
+Ramp,access_model,"""unknown""","""customer_only""",unanswered,No evidence URL
+YouTube Transcript,access_model,"""unknown""","""self_serve_free""",unanswered,https://supadata.ai/blog/best-youtube-transcript-api
+DealCloud,access_model,"""unknown""","""customer_only""",unanswered,No evidence URL
+Gladly,access_model,"""unknown""","""customer_only""",unanswered,No evidence URL
+Google Ads,access_model,"""unknown""","""approval_required""",unanswered,https://apis.io/plans/google-ads/google-ads-plans-pricing
+Amazon Selling Partner,access_model,"""unknown""","""approval_required""",unanswered,No evidence URL
+Ahrefs,access_model,"""unknown""","""self_serve_paid_plan""",unanswered,No evidence URL
+Waterfall.io,access_model,"""approval_required""","""partner_or_contract""",wrong,https://docs.waterfall.io/v1/authentication
+PitchBook,access_model,"""unknown""","""partner_or_contract""",unanswered,None
+Otter AI,access_model,"""customer_only""","""no_public_api""",wrong,https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API
+Grain,access_model,"""unknown""","""self_serve_free""",unanswered,No evidence URL
+Monday.com,api_type,[],"[""graphql""]",unanswered,No evidence URL
+Binance,api_type,[],"[""rest""]",unanswered,No evidence URL
+Ramp,api_type,[],"[""rest""]",unanswered,No evidence URL
+Reducto,api_type,[],"[""rest""]",unanswered,No evidence URL
+PitchBook,api_type,[],"[""rest""]",unanswered,None

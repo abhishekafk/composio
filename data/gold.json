@@ -1,0 +1,872 @@
+{
+ "_note": "DRAFT 2, not frozen. null = not verified from an official vendor page; score.py must skip null fields. access_coarse is the robust label (self_serve = credentials obtainable by signing up or generating in your own account, any cost, no sales or approval step; gated = approval, contract, partner program, or existing-customer tenant only; none_needed = local tool; no_public_api). access_model is the fine label and is null whenever cost or approval is not stated on the official page. Labels were assembled from official vendor pages fetched on 2026-11-23/24, partly via a research agent, and the pages marked verify=true must be re-opened by a human before freezing. No label was taken from another candidate's repo or from third-party blogs. blind=false means the labeller had already seen that app's v1/v2 output. FROZEN 2026-11-23: unverifiable fields nulled; human audit of gold labels to follow and any corrections will be logged, not silently applied.",
+ "labels": {
+  "2": {
+   "app": "HubSpot",
+   "set": "random30",
+   "blind": false,
+   "auth_methods": [
+    "oauth2",
+    "bearer_token"
+   ],
+   "official_mcp": "official",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://developers.hubspot.com/mcp",
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview"
+   ],
+   "notes": "Remote MCP uses OAuth 2.0 and needs the new Developer Platform. Free developer account not confirmed."
+  },
+  "3": {
+   "app": "Pipedrive",
+   "set": "random30",
+   "blind": false,
+   "auth_methods": [
+    "api_key",
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://developers.pipedrive.com/docs/api/v1"
+   ],
+   "notes": "API token from within the app. v3 saw an open-source Pipedrive MCP listing on the developer site; whether that is official is unverified, so MCP stays null. verify=true: read developers.pipedrive.com MCP page."
+  },
+  "8": {
+   "app": "Close",
+   "set": "random30",
+   "blind": false,
+   "auth_methods": [
+    "api_key",
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://developer.close.com/"
+   ],
+   "notes": "Developer home lists API keys, OAuth 2.0 and an MCP server."
+  },
+  "12": {
+   "app": "Intercom",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token",
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication"
+   ],
+   "notes": "Access token issued when you create an app on your workspace; OAuth for public apps. Cost not stated."
+  },
+  "15": {
+   "app": "Pylon",
+   "set": "random30",
+   "blind": false,
+   "auth_methods": [
+    "bearer_token"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "gated",
+   "access_model": "customer_only",
+   "api_type": null,
+   "src": [
+    "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+    "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+    "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server"
+   ],
+   "notes": "Bearer token, only Admins create tokens. MCP at mcp.usepylon.com; docs say OAuth or API token, support article says OAuth only (conflict, record both)."
+  },
+  "16": {
+   "app": "LiveAgent",
+   "set": "zero_hit",
+   "blind": true,
+   "auth_methods": [
+    "api_key"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_trial",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://support.liveagent.com/741982-API-key",
+    "https://support.liveagent.com/567924-Documentation--examples"
+   ],
+   "notes": "apikey header; docs suggest a free trial account for testing; key page last updated 2021."
+  },
+  "19": {
+   "app": "Gorgias",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "api_key",
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://developers.gorgias.com/docs/authentication"
+   ],
+   "notes": "Private apps use an API key; OAuth2 mandatory for public apps."
+  },
+  "23": {
+   "app": "Zoho Cliq",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://www.zoho.com/cliq/help/restapi/v2/"
+   ],
+   "notes": "OAuth 2.0 only; register a client in the Zoho Developer Console. Free-plan access not stated."
+  },
+  "27": {
+   "app": "Telegram",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "other"
+   ],
+   "auth_partial_ok": [
+    "bearer_token",
+    "api_key"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://core.telegram.org/bots/api"
+   ],
+   "notes": "Bot token issued on bot creation, placed in the URL path."
+  },
+  "30": {
+   "app": "Vonage",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "basic",
+    "jwt_service_account"
+   ],
+   "auth_partial_ok": [
+    "api_key"
+   ],
+   "official_mcp": "official",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://developer.vonage.com/en/verify/concepts/authentication",
+    "https://developer.vonage.com/en/mcp-server/overview"
+   ],
+   "notes": "Basic with key and secret, or application JWT; legacy key/secret in query. Documentation MCP and tooling MCP exist. Trial credit not verified."
+  },
+  "32": {
+   "app": "Meta Ads",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": null,
+   "official_mcp": null,
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://developers.facebook.com/docs/marketing-api/get-started/"
+   ],
+   "notes": "Prerequisites: active ad account, developer account, app, tokens. App Review pages could not be fetched. verify=true: human check of access levels and App Review."
+  },
+  "37": {
+   "app": "systeme.io",
+   "set": "zero_hit",
+   "blind": true,
+   "auth_methods": [
+    "api_key"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io",
+    "https://developer.systeme.io/reference/api"
+   ],
+   "notes": "Public API key created in Settings > MCP & API keys, up to 3 per account. Plan not stated. Developer site is robots-blocked for my fetcher. verify=true for the X-API-Key header."
+  },
+  "38": {
+   "app": "Pinterest",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization/"
+   ],
+   "notes": "OAuth 2.0 with authorization code, client credentials, refresh token."
+  },
+  "40": {
+   "app": "SendGrid",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "api_key"
+   ],
+   "auth_partial_ok": [
+    "bearer_token"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication"
+   ],
+   "notes": "API key sent as Bearer; keys created in the account. Plan not stated."
+  },
+  "42": {
+   "app": "WooCommerce",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "basic",
+    "oauth1"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication"
+   ],
+   "notes": "Consumer key/secret generated by a store admin; self-hosted, so you need your own store."
+  },
+  "46": {
+   "app": "Squarespace",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "api_key",
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_paid_plan",
+   "access_partial_ok": [
+    "approval_required"
+   ],
+   "api_type": null,
+   "src": [
+    "https://developers.squarespace.com/commerce-apis/authentication-and-permissions"
+   ],
+   "notes": "API keys need Commerce Advanced; OAuth clients need review and approval."
+  },
+  "47": {
+   "app": "Ecwid",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "oauth2",
+    "bearer_token"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_paid_plan",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "https://api-docs.ecwid.com/reference/rest-api"
+   ],
+   "notes": "Official page says only stores on paid plans can access the API; custom apps get non-expiring secret/public tokens. MCP not stated."
+  },
+  "50": {
+   "app": "fanbasis",
+   "set": "zero_hit",
+   "blind": true,
+   "identity_confidence": "medium",
+   "auth_methods": null,
+   "official_mcp": null,
+   "official_mcp_confidence": "low",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://commasdocs.com/"
+   ],
+   "notes": "Appears to be FanBasis rebranded Commas; docs list x-api-key and a sandbox plus an MCP connector section. My own fetch of commasdocs.com failed (robots), so these come from the research agent. verify=true.",
+   "frozen_note": "fields nulled at freeze: auth_methods, official_mcp, api_type (not verified by me directly)"
+  },
+  "51": {
+   "app": "DataForSEO",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "basic"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://docs.dataforseo.com/v3/auth/"
+   ],
+   "notes": "HTTP Basic only; login and generated API password from the API Access tab after creating an account."
+  },
+  "52": {
+   "app": "SE Ranking",
+   "set": "zero_hit",
+   "blind": true,
+   "auth_methods": [
+    "api_key"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_paid_plan",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://seranking.com/api.html",
+    "https://seranking.com/api/integrations/mcp/"
+   ],
+   "notes": "Official page: API access is included in every SE Ranking plan; key under Settings > API; MCP server exists."
+  },
+  "54": {
+   "app": "MrScraper",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "api_key",
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+   ],
+   "notes": "Official MCP with OAuth 2.1; API key at app.mrscraper.com/api-tokens. Free tier not stated."
+  },
+  "57": {
+   "app": "Bright Data",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token",
+    "basic"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_free",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://docs.brightdata.com/api-reference/authentication",
+    "https://docs.brightdata.com/products/mcp-server/faqs"
+   ],
+   "notes": "Every account gets monthly free credits; default key created at signup; hosted MCP at mcp.brightdata.com."
+  },
+  "60": {
+   "app": "Clay",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": null,
+   "official_mcp": null,
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://university.clay.com/docs/clay-api-cli",
+    "https://university.clay.com/docs/mcp-security-privacy"
+   ],
+   "notes": "Clay docs describe API keys via the CLI and OAuth-based MCP connections; plan gate not captured. The July 2026 API announcement is a Clay community post that I have not opened myself. verify=true.",
+   "frozen_note": "fields nulled at freeze: auth_methods, official_mcp (not verified by me directly)"
+  },
+  "61": {
+   "app": "GitHub",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token",
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "https://github.com/github/github-mcp-server"
+   ],
+   "notes": "PATs, GitHub App tokens, OAuth app tokens, GITHUB_TOKEN; official remote MCP at api.githubcopilot.com/mcp/. Free-account sufficiency not stated."
+  },
+  "65": {
+   "app": "Supabase",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token",
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://supabase.com/docs/reference/api/introduction",
+    "https://supabase.com/docs/guides/platform/personal-access-tokens",
+    "https://supabase.com/docs/guides/ai-tools/mcp"
+   ],
+   "notes": "Management API: personal access token or OAuth2; PAT generated in account settings; hosted MCP at mcp.supabase.com. Free-plan eligibility not stated."
+  },
+  "66": {
+   "app": "Neo4j",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "oauth2",
+    "basic",
+    "bearer_token"
+   ],
+   "official_mcp": "official",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://neo4j.com/docs/aura/api/authentication/",
+    "https://neo4j.com/docs/query-api/current/authentication-authorization/",
+    "https://github.com/neo4j/mcp"
+   ],
+   "notes": "Aura API uses OAuth 2.0 client credentials; Query API basic or bearer; official neo4j/mcp. Plan eligibility for the Aura API not stated on official pages."
+  },
+  "71": {
+   "app": "Notion",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token",
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://developers.notion.com/guides/get-started/internal-connections",
+    "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+   ],
+   "notes": "Internal connection token issued immediately; public connections use OAuth; hosted MCP at mcp.notion.com. Free-workspace eligibility not stated."
+  },
+  "76": {
+   "app": "Monday.com",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token",
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_free",
+   "api_type": [
+    "graphql"
+   ],
+   "src": [
+    "https://developer.monday.com/api-reference/docs/authentication",
+    "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp"
+   ],
+   "notes": "Official page: create a free developer account to get an API token; hosted MCP supports OAuth or personal token."
+  },
+  "78": {
+   "app": "Coda",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": null,
+   "official_mcp": "official",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [
+    "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP"
+   ],
+   "notes": "Rebranded Superhuman Docs in July 2026 per its official blog; auth label is medium confidence (REST auth page not opened). verify=true.",
+   "frozen_note": "fields nulled at freeze: auth_methods, api_type (not verified by me directly)"
+  },
+  "81": {
+   "app": "Stripe",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "api_key",
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://docs.stripe.com/mcp"
+   ],
+   "notes": "MCP supports OAuth or agent API keys; non-agent key cutoff date on the live page is January 11, 2027 (earlier dates seen only on third-party pages)."
+  },
+  "83": {
+   "app": "Binance",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "signed_request",
+    "api_key"
+   ],
+   "official_mcp": null,
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://developers.binance.com/docs/binance-spot-api-docs/faqs/api_key_types"
+   ],
+   "notes": "API key in X-MBX-APIKEY plus HMAC/RSA/Ed25519 signatures; HMAC deprecated. KYC and MCP not stated."
+  },
+  "84": {
+   "app": "Paygent Connect",
+   "set": "hard",
+   "blind": true,
+   "identity_confidence": "low",
+   "auth_methods": null,
+   "official_mcp": null,
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [],
+   "notes": "No official Paygent developer docs reached; NMI link unconfirmed. Leave unscored."
+  },
+  "85": {
+   "app": "iPayX",
+   "set": "hard",
+   "blind": true,
+   "identity_confidence": "low",
+   "auth_methods": null,
+   "official_mcp": null,
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": null,
+   "src": [],
+   "notes": "Candidate identity is a GitHub-hosted MCP project; no official docs site reached. Leave unscored."
+  },
+  "89": {
+   "app": "Ramp",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "gated",
+   "access_model": "customer_only",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://docs.ramp.com/developer-api/v1/authorization",
+    "https://docs.ramp.com/llms-guides/ramp-mcp.txt"
+   ],
+   "notes": "OAuth 2.0; authorizing apps limited to admins; MCP needs a Ramp production or sandbox account."
+  },
+  "95": {
+   "app": "Reducto",
+   "set": "zero_hit",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_free",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://docs.reducto.ai/agent-guide",
+    "https://docs.reducto.ai/mcp-server"
+   ],
+   "notes": "Create a free account at studio.reducto.ai; hosted MCP at mcp.reducto.ai/mcp."
+  },
+  "96": {
+   "app": "Devin",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token"
+   ],
+   "official_mcp": "official",
+   "access_coarse": null,
+   "access_model": null,
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://docs.devin.ai/api-reference/authentication",
+    "https://docs.devin.ai/work-with-devin/devin-mcp"
+   ],
+   "notes": "Service user keys (cog_ prefix) or PATs; MCP requires a Devin account; legacy apk_ keys rejected."
+  },
+  "98": {
+   "app": "Mermaid CLI",
+   "set": "random30",
+   "blind": true,
+   "auth_methods": [
+    "none"
+   ],
+   "official_mcp": null,
+   "access_coarse": "none_needed",
+   "access_model": null,
+   "api_type": [
+    "cli_local"
+   ],
+   "src": [
+    "https://github.com/mermaid-js/mermaid-cli"
+   ],
+   "notes": "Local command-line tool installed from npm; no account or login. README mentions no MCP server (not the same as none exists)."
+  },
+  "99": {
+   "app": "YouTube Transcript",
+   "set": "random30",
+   "blind": true,
+   "identity_note": "transcriptapi.com, not transcriptapi.io",
+   "auth_methods": [
+    "bearer_token",
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_free",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://transcriptapi.com/",
+    "https://transcriptapi.com/docs/mcp/"
+   ],
+   "notes": "New accounts get free credits with no card; hosted MCP at transcriptapi.com/mcp."
+  },
+  "10": {
+   "app": "DealCloud",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "gated",
+   "access_model": "customer_only",
+   "access_confidence": "medium",
+   "api_type": null,
+   "src": [
+    "https://api.docs.dealcloud.com/docs/token",
+    "https://api.docs.dealcloud.com/docs/apikeys",
+    "https://api.docs.dealcloud.com/"
+   ],
+   "notes": "OAuth2 client credentials; needs a user in a permitted group of a DealCloud tenant."
+  },
+  "20": {
+   "app": "Gladly",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "basic"
+   ],
+   "official_mcp": null,
+   "access_coarse": "gated",
+   "access_model": "customer_only",
+   "access_confidence": "medium",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://developer.gladly.com/rest/"
+   ],
+   "notes": "Token-based Basic auth; admin grants the API User permission."
+  },
+  "31": {
+   "app": "Google Ads",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": "gated",
+   "access_model": "approval_required",
+   "api_type": null,
+   "src": [
+    "https://developers.google.com/google-ads/api/docs/first-call/dev-token"
+   ],
+   "notes": "Developer tokens sunset 2026-09-09; Test access on enabling the API; Basic and Explorer via automated review with brand verification; Standard needs manual review."
+  },
+  "33": {
+   "app": "LinkedIn Ads",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": "gated",
+   "access_model": "approval_required",
+   "api_type": null,
+   "src": [
+    "https://developer.linkedin.com/product-catalog/marketing/advertising-api"
+   ],
+   "notes": "Apply for Development tier and wait for review; Standard tier is a separate upgrade."
+  },
+  "49": {
+   "app": "Amazon Selling Partner",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": "gated",
+   "access_model": "approval_required",
+   "api_type": null,
+   "src": [
+    "https://developer-docs.amazon/sp-api/docs/sp-api-registration-overview"
+   ],
+   "notes": "Developer registration needed; primary account user only; individual accounts ineligible for private apps."
+  },
+  "53": {
+   "app": "Ahrefs",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "api_key"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_paid_plan",
+   "api_type": null,
+   "src": [
+    "https://docs.ahrefs.com/api/docs/introduction"
+   ],
+   "notes": "API on eligible paid plans, limited free test queries otherwise; owners/admins create keys; exact lowest tier not confirmed."
+  },
+  "59": {
+   "app": "Waterfall.io",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "api_key"
+   ],
+   "official_mcp": null,
+   "access_coarse": "gated",
+   "access_model": "partner_or_contract",
+   "access_confidence": "medium",
+   "api_type": null,
+   "src": [
+    "https://docs.waterfall.io/v1/api-keys-overview.md",
+    "https://waterfall.io/"
+   ],
+   "notes": "x-api-key header; key management needs the account manager; homepage offers a booked call."
+  },
+  "90": {
+   "app": "PitchBook",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "api_key"
+   ],
+   "official_mcp": null,
+   "access_coarse": "gated",
+   "access_model": "partner_or_contract",
+   "api_type": [
+    "rest"
+   ],
+   "src": [
+    "https://pitchbook.com/help/PitchBook-api"
+   ],
+   "notes": "Standalone contract required."
+  },
+  "92": {
+   "app": "Otter AI",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "oauth2"
+   ],
+   "official_mcp": "official",
+   "access_coarse": "gated",
+   "access_model": "no_public_api",
+   "access_confidence": "medium",
+   "api_type": null,
+   "src": [
+    "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+   ],
+   "notes": "Official help article: OAuth for MCP; no public API key currently."
+  },
+  "100": {
+   "app": "Grain",
+   "set": "hard",
+   "blind": true,
+   "auth_methods": [
+    "bearer_token",
+    "oauth2"
+   ],
+   "official_mcp": null,
+   "access_coarse": "self_serve",
+   "access_model": "self_serve_free",
+   "api_type": null,
+   "src": [
+    "https://support.grain.com/en/articles/15507288-grain-api"
+   ],
+   "notes": "Personal Access Token on every plan including Free; Workspace token on Business and Enterprise."
+  }
+ },
+ "_frozen": true
+}

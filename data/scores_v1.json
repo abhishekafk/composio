@@ -1,0 +1,1488 @@
+{
+  "run_name": "v1",
+  "subsets": {
+    "all": {
+      "subset_size": 48,
+      "summary": {
+        "scored": 136,
+        "answered": 82,
+        "coverage": 0.6029411764705882,
+        "accuracy_when_answered": 0.7317073170731707,
+        "overall_correct": 0.4411764705882353,
+        "exact_overall": 0.3897058823529412,
+        "partial_overall": 0.10294117647058823,
+        "exact_count": 53,
+        "partial_count": 14,
+        "vendor_quotes": 65,
+        "vendor_quote_share": 0.7926829268292683,
+        "wilson_ci": [
+          0.3604816181285475,
+          0.5251030867079589
+        ],
+        "exact_wilson_ci": [
+          0.3118498734283851,
+          0.47362144814006435
+        ]
+      },
+      "metrics": {
+        "auth_methods": {
+          "scored": 42,
+          "answered": 37,
+          "coverage": 0.8809523809523809,
+          "accuracy_when_answered": 0.6081081081081081,
+          "overall_correct": 0.5357142857142857,
+          "exact_overall": 0.38095238095238093,
+          "partial_overall": 0.30952380952380953,
+          "exact_count": 16,
+          "partial_count": 13,
+          "vendor_quotes": 30,
+          "vendor_quote_share": 0.8108108108108109,
+          "wilson_ci": [
+            0.3883203377266964,
+            0.6771226280806124
+          ],
+          "exact_wilson_ci": [
+            0.2499974842912967,
+            0.5318592963510071
+          ]
+        },
+        "official_mcp": {
+          "scored": 21,
+          "answered": 4,
+          "coverage": 0.19047619047619047,
+          "accuracy_when_answered": 0.75,
+          "overall_correct": 0.14285714285714285,
+          "exact_overall": 0.14285714285714285,
+          "partial_overall": 0.0,
+          "exact_count": 3,
+          "partial_count": 0,
+          "vendor_quotes": 2,
+          "vendor_quote_share": 0.5,
+          "wilson_ci": [
+            0.04981022534534571,
+            0.3463601227995692
+          ],
+          "exact_wilson_ci": [
+            0.04981022534534571,
+            0.3463601227995692
+          ]
+        },
+        "access_coarse": {
+          "scored": 31,
+          "answered": 15,
+          "coverage": 0.4838709677419355,
+          "accuracy_when_answered": 0.8666666666666667,
+          "overall_correct": 0.41935483870967744,
+          "exact_overall": 0.41935483870967744,
+          "partial_overall": 0.0,
+          "exact_count": 13,
+          "partial_count": 0,
+          "vendor_quotes": 12,
+          "vendor_quote_share": 0.8,
+          "wilson_ci": [
+            0.26415569618936363,
+            0.5923370451971245
+          ],
+          "exact_wilson_ci": [
+            0.26415569618936363,
+            0.5923370451971245
+          ]
+        },
+        "access_model": {
+          "scored": 20,
+          "answered": 9,
+          "coverage": 0.45,
+          "accuracy_when_answered": 0.5,
+          "overall_correct": 0.225,
+          "exact_overall": 0.2,
+          "partial_overall": 0.05,
+          "exact_count": 4,
+          "partial_count": 1,
+          "vendor_quotes": 6,
+          "vendor_quote_share": 0.6666666666666666,
+          "wilson_ci": [
+            0.09593275572842874,
+            0.44268577893889416
+          ],
+          "exact_wilson_ci": [
+            0.08065780743558368,
+            0.4160169576560414
+          ]
+        },
+        "api_type": {
+          "scored": 22,
+          "answered": 17,
+          "coverage": 0.7727272727272727,
+          "accuracy_when_answered": 1.0,
+          "overall_correct": 0.7727272727272727,
+          "exact_overall": 0.7727272727272727,
+          "partial_overall": 0.0,
+          "exact_count": 17,
+          "partial_count": 0,
+          "vendor_quotes": 15,
+          "vendor_quote_share": 0.8823529411764706,
+          "wilson_ci": [
+            0.5656009139796084,
+            0.8987694350904082
+          ],
+          "exact_wilson_ci": [
+            0.5656009139796084,
+            0.8987694350904082
+          ]
+        }
+      }
+    },
+    "random30": {
+      "subset_size": 30,
+      "summary": {
+        "scored": 84,
+        "answered": 51,
+        "coverage": 0.6071428571428571,
+        "accuracy_when_answered": 0.7352941176470589,
+        "overall_correct": 0.44642857142857145,
+        "exact_overall": 0.36904761904761907,
+        "partial_overall": 0.15476190476190477,
+        "exact_count": 31,
+        "partial_count": 13,
+        "vendor_quotes": 39,
+        "vendor_quote_share": 0.7647058823529411,
+        "wilson_ci": [
+          0.3447863681337433,
+          0.5527562988355983
+        ],
+        "exact_wilson_ci": [
+          0.2737013599471203,
+          0.4758473815334924
+        ]
+      },
+      "metrics": {
+        "auth_methods": {
+          "scored": 28,
+          "answered": 25,
+          "coverage": 0.8928571428571429,
+          "accuracy_when_answered": 0.6,
+          "overall_correct": 0.5357142857142857,
+          "exact_overall": 0.32142857142857145,
+          "partial_overall": 0.42857142857142855,
+          "exact_count": 9,
+          "partial_count": 12,
+          "vendor_quotes": 19,
+          "vendor_quote_share": 0.76,
+          "wilson_ci": [
+            0.3581272177123478,
+            0.7046840056149761
+          ],
+          "exact_wilson_ci": [
+            0.179332689807678,
+            0.5066111935557022
+          ]
+        },
+        "official_mcp": {
+          "scored": 16,
+          "answered": 2,
+          "coverage": 0.125,
+          "accuracy_when_answered": 0.5,
+          "overall_correct": 0.0625,
+          "exact_overall": 0.0625,
+          "partial_overall": 0.0,
+          "exact_count": 1,
+          "partial_count": 0,
+          "vendor_quotes": 1,
+          "vendor_quote_share": 0.5,
+          "wilson_ci": [
+            0.011119376567744893,
+            0.2832867884600566
+          ],
+          "exact_wilson_ci": [
+            0.011119376567744893,
+            0.2832867884600566
+          ]
+        },
+        "access_coarse": {
+          "scored": 17,
+          "answered": 8,
+          "coverage": 0.47058823529411764,
+          "accuracy_when_answered": 0.875,
+          "overall_correct": 0.4117647058823529,
+          "exact_overall": 0.4117647058823529,
+          "partial_overall": 0.0,
+          "exact_count": 7,
+          "partial_count": 0,
+          "vendor_quotes": 6,
+          "vendor_quote_share": 0.75,
+          "wilson_ci": [
+            0.21611086744741476,
+            0.63994516614964
+          ],
+          "exact_wilson_ci": [
+            0.21611086744741476,
+            0.63994516614964
+          ]
+        },
+        "access_model": {
+          "scored": 7,
+          "answered": 3,
+          "coverage": 0.42857142857142855,
+          "accuracy_when_answered": 0.5,
+          "overall_correct": 0.21428571428571427,
+          "exact_overall": 0.14285714285714285,
+          "partial_overall": 0.14285714285714285,
+          "exact_count": 1,
+          "partial_count": 1,
+          "vendor_quotes": 1,
+          "vendor_quote_share": 0.3333333333333333,
+          "wilson_ci": [
+            0.05112443821086893,
+            0.5799209931381906
+          ],
+          "exact_wilson_ci": [
+            0.025679698293585462,
+            0.5131270908927388
+          ]
+        },
+        "api_type": {
+          "scored": 16,
+          "answered": 13,
+          "coverage": 0.8125,
+          "accuracy_when_answered": 1.0,
+          "overall_correct": 0.8125,
+          "exact_overall": 0.8125,
+          "partial_overall": 0.0,
+          "exact_count": 13,
+          "partial_count": 0,
+          "vendor_quotes": 12,
+          "vendor_quote_share": 0.9230769230769231,
+          "wilson_ci": [
+            0.569911720215135,
+            0.9340838761935782
+          ],
+          "exact_wilson_ci": [
+            0.569911720215135,
+            0.9340838761935782
+          ]
+        }
+      }
+    },
+    "hard": {
+      "subset_size": 13,
+      "summary": {
+        "scored": 34,
+        "answered": 19,
+        "coverage": 0.5588235294117647,
+        "accuracy_when_answered": 0.6842105263157895,
+        "overall_correct": 0.38235294117647056,
+        "exact_overall": 0.38235294117647056,
+        "partial_overall": 0.0,
+        "exact_count": 13,
+        "partial_count": 0,
+        "vendor_quotes": 15,
+        "vendor_quote_share": 0.7894736842105263,
+        "wilson_ci": [
+          0.2390020749518457,
+          0.5495894975899293
+        ],
+        "exact_wilson_ci": [
+          0.2390020749518457,
+          0.5495894975899293
+        ]
+      },
+      "metrics": {
+        "auth_methods": {
+          "scored": 10,
+          "answered": 9,
+          "coverage": 0.9,
+          "accuracy_when_answered": 0.6666666666666666,
+          "overall_correct": 0.6,
+          "exact_overall": 0.6,
+          "partial_overall": 0.0,
+          "exact_count": 6,
+          "partial_count": 0,
+          "vendor_quotes": 8,
+          "vendor_quote_share": 0.8888888888888888,
+          "wilson_ci": [
+            0.3126742368657031,
+            0.8318193662123929
+          ],
+          "exact_wilson_ci": [
+            0.3126742368657031,
+            0.8318193662123929
+          ]
+        },
+        "official_mcp": {
+          "scored": 2,
+          "answered": 1,
+          "coverage": 0.5,
+          "accuracy_when_answered": 1.0,
+          "overall_correct": 0.5,
+          "exact_overall": 0.5,
+          "partial_overall": 0.0,
+          "exact_count": 1,
+          "partial_count": 0,
+          "vendor_quotes": 0,
+          "vendor_quote_share": 0.0,
+          "wilson_ci": [
+            0.09453148796027488,
+            0.9054685120397251
+          ],
+          "exact_wilson_ci": [
+            0.09453148796027488,
+            0.9054685120397251
+          ]
+        },
+        "access_coarse": {
+          "scored": 10,
+          "answered": 4,
+          "coverage": 0.4,
+          "accuracy_when_answered": 0.75,
+          "overall_correct": 0.3,
+          "exact_overall": 0.3,
+          "partial_overall": 0.0,
+          "exact_count": 3,
+          "partial_count": 0,
+          "vendor_quotes": 3,
+          "vendor_quote_share": 0.75,
+          "wilson_ci": [
+            0.10779148645575709,
+            0.603221307388051
+          ],
+          "exact_wilson_ci": [
+            0.10779148645575709,
+            0.603221307388051
+          ]
+        },
+        "access_model": {
+          "scored": 10,
+          "answered": 4,
+          "coverage": 0.4,
+          "accuracy_when_answered": 0.5,
+          "overall_correct": 0.2,
+          "exact_overall": 0.2,
+          "partial_overall": 0.0,
+          "exact_count": 2,
+          "partial_count": 0,
+          "vendor_quotes": 3,
+          "vendor_quote_share": 0.75,
+          "wilson_ci": [
+            0.056682284601656835,
+            0.5098369061640554
+          ],
+          "exact_wilson_ci": [
+            0.056682284601656835,
+            0.5098369061640554
+          ]
+        },
+        "api_type": {
+          "scored": 2,
+          "answered": 1,
+          "coverage": 0.5,
+          "accuracy_when_answered": 1.0,
+          "overall_correct": 0.5,
+          "exact_overall": 0.5,
+          "partial_overall": 0.0,
+          "exact_count": 1,
+          "partial_count": 0,
+          "vendor_quotes": 1,
+          "vendor_quote_share": 1.0,
+          "wilson_ci": [
+            0.09453148796027488,
+            0.9054685120397251
+          ],
+          "exact_wilson_ci": [
+            0.09453148796027488,
+            0.9054685120397251
+          ]
+        }
+      }
+    },
+    "zero_hit": {
+      "subset_size": 5,
+      "summary": {
+        "scored": 18,
+        "answered": 12,
+        "coverage": 0.6666666666666666,
+        "accuracy_when_answered": 0.7916666666666666,
+        "overall_correct": 0.5277777777777778,
+        "exact_overall": 0.5,
+        "partial_overall": 0.05555555555555555,
+        "exact_count": 9,
+        "partial_count": 1,
+        "vendor_quotes": 11,
+        "vendor_quote_share": 0.9166666666666666,
+        "wilson_ci": [
+          0.3134696777165649,
+          0.7323148425996908
+        ],
+        "exact_wilson_ci": [
+          0.290310566368142,
+          0.709689433631858
+        ]
+      },
+      "metrics": {
+        "auth_methods": {
+          "scored": 4,
+          "answered": 3,
+          "coverage": 0.75,
+          "accuracy_when_answered": 0.5,
+          "overall_correct": 0.375,
+          "exact_overall": 0.25,
+          "partial_overall": 0.25,
+          "exact_count": 1,
+          "partial_count": 1,
+          "vendor_quotes": 3,
+          "vendor_quote_share": 1.0,
+          "wilson_ci": [
+            0.09189947055397574,
+            0.7805729845425611
+          ],
+          "exact_wilson_ci": [
+            0.045587393370284446,
+            0.6993575168227892
+          ]
+        },
+        "official_mcp": {
+          "scored": 3,
+          "answered": 1,
+          "coverage": 0.3333333333333333,
+          "accuracy_when_answered": 1.0,
+          "overall_correct": 0.3333333333333333,
+          "exact_overall": 0.3333333333333333,
+          "partial_overall": 0.0,
+          "exact_count": 1,
+          "partial_count": 0,
+          "vendor_quotes": 1,
+          "vendor_quote_share": 1.0,
+          "wilson_ci": [
+            0.06149212499615064,
+            0.7923398852197449
+          ],
+          "exact_wilson_ci": [
+            0.06149212499615064,
+            0.7923398852197449
+          ]
+        },
+        "access_coarse": {
+          "scored": 4,
+          "answered": 3,
+          "coverage": 0.75,
+          "accuracy_when_answered": 1.0,
+          "overall_correct": 0.75,
+          "exact_overall": 0.75,
+          "partial_overall": 0.0,
+          "exact_count": 3,
+          "partial_count": 0,
+          "vendor_quotes": 3,
+          "vendor_quote_share": 1.0,
+          "wilson_ci": [
+            0.3006424831772108,
+            0.9544126066297156
+          ],
+          "exact_wilson_ci": [
+            0.3006424831772108,
+            0.9544126066297156
+          ]
+        },
+        "access_model": {
+          "scored": 3,
+          "answered": 2,
+          "coverage": 0.6666666666666666,
+          "accuracy_when_answered": 0.5,
+          "overall_correct": 0.3333333333333333,
+          "exact_overall": 0.3333333333333333,
+          "partial_overall": 0.0,
+          "exact_count": 1,
+          "partial_count": 0,
+          "vendor_quotes": 2,
+          "vendor_quote_share": 1.0,
+          "wilson_ci": [
+            0.06149212499615064,
+            0.7923398852197449
+          ],
+          "exact_wilson_ci": [
+            0.06149212499615064,
+            0.7923398852197449
+          ]
+        },
+        "api_type": {
+          "scored": 4,
+          "answered": 3,
+          "coverage": 0.75,
+          "accuracy_when_answered": 1.0,
+          "overall_correct": 0.75,
+          "exact_overall": 0.75,
+          "partial_overall": 0.0,
+          "exact_count": 3,
+          "partial_count": 0,
+          "vendor_quotes": 2,
+          "vendor_quote_share": 0.6666666666666666,
+          "wilson_ci": [
+            0.3006424831772108,
+            0.9544126066297156
+          ],
+          "exact_wilson_ci": [
+            0.3006424831772108,
+            0.9544126066297156
+          ]
+        }
+      }
+    },
+    "blind_only": {
+      "subset_size": 44,
+      "summary": {
+        "scored": 127,
+        "answered": 78,
+        "coverage": 0.6141732283464567,
+        "accuracy_when_answered": 0.7371794871794872,
+        "overall_correct": 0.452755905511811,
+        "exact_overall": 0.4015748031496063,
+        "partial_overall": 0.10236220472440945,
+        "exact_count": 51,
+        "partial_count": 13,
+        "vendor_quotes": 63,
+        "vendor_quote_share": 0.8076923076923077,
+        "wilson_ci": [
+          0.36884188137258966,
+          0.5394440584155367
+        ],
+        "exact_wilson_ci": [
+          0.3204180345887656,
+          0.4885110066364976
+        ]
+      },
+      "metrics": {
+        "auth_methods": {
+          "scored": 38,
+          "answered": 33,
+          "coverage": 0.868421052631579,
+          "accuracy_when_answered": 0.6060606060606061,
+          "overall_correct": 0.5263157894736842,
+          "exact_overall": 0.3684210526315789,
+          "partial_overall": 0.3157894736842105,
+          "exact_count": 14,
+          "partial_count": 12,
+          "vendor_quotes": 28,
+          "vendor_quote_share": 0.8484848484848485,
+          "wilson_ci": [
+            0.37259000220453536,
+            0.675209496258355
+          ],
+          "exact_wilson_ci": [
+            0.2338424204804246,
+            0.5271600872051228
+          ]
+        },
+        "official_mcp": {
+          "scored": 18,
+          "answered": 4,
+          "coverage": 0.2222222222222222,
+          "accuracy_when_answered": 0.75,
+          "overall_correct": 0.16666666666666666,
+          "exact_overall": 0.16666666666666666,
+          "partial_overall": 0.0,
+          "exact_count": 3,
+          "partial_count": 0,
+          "vendor_quotes": 2,
+          "vendor_quote_share": 0.5,
+          "wilson_ci": [
+            0.05836588578077845,
+            0.39221987042415324
+          ],
+          "exact_wilson_ci": [
+            0.05836588578077845,
+            0.39221987042415324
+          ]
+        },
+        "access_coarse": {
+          "scored": 30,
+          "answered": 15,
+          "coverage": 0.5,
+          "accuracy_when_answered": 0.8666666666666667,
+          "overall_correct": 0.43333333333333335,
+          "exact_overall": 0.43333333333333335,
+          "partial_overall": 0.0,
+          "exact_count": 13,
+          "partial_count": 0,
+          "vendor_quotes": 12,
+          "vendor_quote_share": 0.8,
+          "wilson_ci": [
+            0.2737751302999203,
+            0.6080266009037039
+          ],
+          "exact_wilson_ci": [
+            0.2737751302999203,
+            0.6080266009037039
+          ]
+        },
+        "access_model": {
+          "scored": 19,
+          "answered": 9,
+          "coverage": 0.47368421052631576,
+          "accuracy_when_answered": 0.5,
+          "overall_correct": 0.23684210526315788,
+          "exact_overall": 0.21052631578947367,
+          "partial_overall": 0.05263157894736842,
+          "exact_count": 4,
+          "partial_count": 1,
+          "vendor_quotes": 6,
+          "vendor_quote_share": 0.6666666666666666,
+          "wilson_ci": [
+            0.10122004066720325,
+            0.4609792515693083
+          ],
+          "exact_wilson_ci": [
+            0.08507691916226626,
+            0.4333423022978965
+          ]
+        },
+        "api_type": {
+          "scored": 22,
+          "answered": 17,
+          "coverage": 0.7727272727272727,
+          "accuracy_when_answered": 1.0,
+          "overall_correct": 0.7727272727272727,
+          "exact_overall": 0.7727272727272727,
+          "partial_overall": 0.0,
+          "exact_count": 17,
+          "partial_count": 0,
+          "vendor_quotes": 15,
+          "vendor_quote_share": 0.8823529411764706,
+          "wilson_ci": [
+            0.5656009139796084,
+            0.8987694350904082
+          ],
+          "exact_wilson_ci": [
+            0.5656009139796084,
+            0.8987694350904082
+          ]
+        }
+      }
+    }
+  },
+  "vendor_quote_share": 0.7926829268292683,
+  "total_answered_fields": 82,
+  "total_vendor_quoted_fields": 65,
+  "calibration": {
+    "False": {
+      "records_count": 15,
+      "scored_fields": 42,
+      "answered_fields": 38,
+      "exact_count": 24,
+      "partial_count": 5,
+      "coverage": 0.9047619047619048,
+      "accuracy_when_answered": 0.6973684210526315,
+      "overall_correct": 0.6309523809523809,
+      "wilson_ci": [
+        0.47986089384155495,
+        0.7600966474519109
+      ]
+    },
+    "True": {
+      "records_count": 33,
+      "scored_fields": 94,
+      "answered_fields": 44,
+      "exact_count": 29,
+      "partial_count": 9,
+      "coverage": 0.46808510638297873,
+      "accuracy_when_answered": 0.7613636363636364,
+      "overall_correct": 0.35638297872340424,
+      "wilson_ci": [
+        0.266956076718809,
+        0.45708724156741926
+      ]
+    }
+  },
+  "misses": [
+    {
+      "app": "HubSpot",
+      "field": "auth_methods",
+      "agent_value": [
+        "oauth2"
+      ],
+      "gold_value": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview"
+    },
+    {
+      "app": "Close",
+      "field": "auth_methods",
+      "agent_value": [
+        "basic"
+      ],
+      "gold_value": [
+        "api_key",
+        "oauth2"
+      ],
+      "outcome": "wrong",
+      "evidence_url": "https://endgrate.com/blog/how-to-create-or-update-leads-with-the-close-api-in-javascript"
+    },
+    {
+      "app": "Gorgias",
+      "field": "auth_methods",
+      "agent_value": [
+        "basic",
+        "oauth2"
+      ],
+      "gold_value": [
+        "api_key",
+        "oauth2"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://www.getmacha.com/blog/how-to-use-the-gorgias-api"
+    },
+    {
+      "app": "Telegram",
+      "field": "auth_methods",
+      "agent_value": [
+        "oauth2",
+        "api_key"
+      ],
+      "gold_value": [
+        "other"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://core.telegram.org/widgets/login"
+    },
+    {
+      "app": "systeme.io",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key",
+        "bearer_token"
+      ],
+      "gold_value": [
+        "api_key"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io"
+    },
+    {
+      "app": "SendGrid",
+      "field": "auth_methods",
+      "agent_value": [
+        "bearer_token",
+        "api_key"
+      ],
+      "gold_value": [
+        "api_key"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://mindcloud.co/docs/universal/rest/sendgrid/latest/introduction/authentication"
+    },
+    {
+      "app": "WooCommerce",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key"
+      ],
+      "gold_value": [
+        "basic",
+        "oauth1"
+      ],
+      "outcome": "wrong",
+      "evidence_url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication"
+    },
+    {
+      "app": "DataForSEO",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key"
+      ],
+      "gold_value": [
+        "basic"
+      ],
+      "outcome": "wrong",
+      "evidence_url": "https://dataforseo.com/help-center/how-to-authenticate-with-dataforseo-google-search-serp-api-api-key-setup-and-code-examples"
+    },
+    {
+      "app": "SE Ranking",
+      "field": "auth_methods",
+      "agent_value": [],
+      "gold_value": [
+        "api_key"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "MrScraper",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key",
+        "bearer_token"
+      ],
+      "gold_value": [
+        "api_key",
+        "oauth2"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://docs.mrscraper.com/docs/api/authentication"
+    },
+    {
+      "app": "Bright Data",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key",
+        "bearer_token"
+      ],
+      "gold_value": [
+        "bearer_token",
+        "basic"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://docs.brightdata.com/api-reference/authentication"
+    },
+    {
+      "app": "GitHub",
+      "field": "auth_methods",
+      "agent_value": [
+        "oauth2",
+        "bearer_token",
+        "basic"
+      ],
+      "gold_value": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api"
+    },
+    {
+      "app": "Supabase",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key",
+        "bearer_token"
+      ],
+      "gold_value": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://supabase.com/docs/guides/getting-started/api-keys"
+    },
+    {
+      "app": "Neo4j",
+      "field": "auth_methods",
+      "agent_value": [
+        "basic",
+        "bearer_token"
+      ],
+      "gold_value": [
+        "oauth2",
+        "basic",
+        "bearer_token"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://neo4j.com/docs/query-api/current/authentication-authorization"
+    },
+    {
+      "app": "Monday.com",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key",
+        "oauth2"
+      ],
+      "gold_value": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://developer.monday.com/api-reference/docs/authentication"
+    },
+    {
+      "app": "Stripe",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key"
+      ],
+      "gold_value": [
+        "api_key",
+        "oauth2"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://docs.stripe.com/api/authentication"
+    },
+    {
+      "app": "Binance",
+      "field": "auth_methods",
+      "agent_value": [],
+      "gold_value": [
+        "signed_request",
+        "api_key"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Ramp",
+      "field": "auth_methods",
+      "agent_value": [],
+      "gold_value": [
+        "oauth2"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Reducto",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key"
+      ],
+      "gold_value": [
+        "bearer_token"
+      ],
+      "outcome": "wrong",
+      "evidence_url": "https://docs.reducto.ai/quickstart"
+    },
+    {
+      "app": "Devin",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key"
+      ],
+      "gold_value": [
+        "bearer_token"
+      ],
+      "outcome": "wrong",
+      "evidence_url": "https://docs.devin.ai/api-reference/authentication"
+    },
+    {
+      "app": "Mermaid CLI",
+      "field": "auth_methods",
+      "agent_value": [],
+      "gold_value": [
+        "none"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "https://brew.sh/formula/mermaid-cli"
+    },
+    {
+      "app": "YouTube Transcript",
+      "field": "auth_methods",
+      "agent_value": [
+        "bearer_token"
+      ],
+      "gold_value": [
+        "bearer_token",
+        "oauth2"
+      ],
+      "outcome": "partial",
+      "evidence_url": "https://dlthub.com/context/source/youtube-transcript-api"
+    },
+    {
+      "app": "DealCloud",
+      "field": "auth_methods",
+      "agent_value": [
+        "api_key"
+      ],
+      "gold_value": [
+        "oauth2"
+      ],
+      "outcome": "wrong",
+      "evidence_url": "https://api.docs.dealcloud.com/docs/apikeys"
+    },
+    {
+      "app": "Ahrefs",
+      "field": "auth_methods",
+      "agent_value": [
+        "bearer_token"
+      ],
+      "gold_value": [
+        "api_key"
+      ],
+      "outcome": "wrong",
+      "evidence_url": "https://docs.ahrefs.com/en/api/docs/api-keys-creation-and-management"
+    },
+    {
+      "app": "PitchBook",
+      "field": "auth_methods",
+      "agent_value": [],
+      "gold_value": [
+        "api_key"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Otter AI",
+      "field": "auth_methods",
+      "agent_value": [
+        "bearer_token"
+      ],
+      "gold_value": [
+        "oauth2"
+      ],
+      "outcome": "wrong",
+      "evidence_url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+    },
+    {
+      "app": "HubSpot",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Close",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Pylon",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Vonage",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "SE Ranking",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "MrScraper",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Bright Data",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "GitHub",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Supabase",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Neo4j",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Notion",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Monday.com",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Coda",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Stripe",
+      "field": "official_mcp",
+      "agent_value": "none_found",
+      "gold_value": "official",
+      "outcome": "wrong",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Ramp",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Reducto",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "YouTube Transcript",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "DealCloud",
+      "field": "official_mcp",
+      "agent_value": "unknown",
+      "gold_value": "official",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Pylon",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "gated",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Zoho Cliq",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "SendGrid",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Squarespace",
+      "field": "access_coarse",
+      "agent_value": "approval_required",
+      "gold_value": "self_serve",
+      "outcome": "wrong",
+      "evidence_url": "https://developers.squarespace.com/commerce-apis/oauth"
+    },
+    {
+      "app": "DataForSEO",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "SE Ranking",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Bright Data",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Supabase",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Monday.com",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Ramp",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "gated",
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Mermaid CLI",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "none_needed",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "DealCloud",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "gated",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Gladly",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "gated",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Amazon Selling Partner",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "gated",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Ahrefs",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "PitchBook",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "gated",
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Otter AI",
+      "field": "access_coarse",
+      "agent_value": "self_serve_paid_plan",
+      "gold_value": "gated",
+      "outcome": "wrong",
+      "evidence_url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+    },
+    {
+      "app": "Grain",
+      "field": "access_coarse",
+      "agent_value": "unknown",
+      "gold_value": "self_serve",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Pylon",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "customer_only",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "LiveAgent",
+      "field": "access_model",
+      "agent_value": "self_serve_free",
+      "gold_value": "self_serve_trial",
+      "outcome": "wrong",
+      "evidence_url": "https://www.liveagent.com/pricing"
+    },
+    {
+      "app": "Squarespace",
+      "field": "access_model",
+      "agent_value": "approval_required",
+      "gold_value": "self_serve_paid_plan",
+      "outcome": "partial",
+      "evidence_url": "https://developers.squarespace.com/commerce-apis/oauth"
+    },
+    {
+      "app": "Ecwid",
+      "field": "access_model",
+      "agent_value": "self_serve_free",
+      "gold_value": "self_serve_paid_plan",
+      "outcome": "wrong",
+      "evidence_url": "https://docs.ecwid.com/get-started/make-your-first-api-request"
+    },
+    {
+      "app": "SE Ranking",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "self_serve_paid_plan",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Bright Data",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "self_serve_free",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Monday.com",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "self_serve_free",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Ramp",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "customer_only",
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "DealCloud",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "customer_only",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Gladly",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "customer_only",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Amazon Selling Partner",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "approval_required",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Ahrefs",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "self_serve_paid_plan",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Waterfall.io",
+      "field": "access_model",
+      "agent_value": "approval_required",
+      "gold_value": "partner_or_contract",
+      "outcome": "wrong",
+      "evidence_url": "https://waterfall.mintlify.app/v1/authentication"
+    },
+    {
+      "app": "PitchBook",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "partner_or_contract",
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Otter AI",
+      "field": "access_model",
+      "agent_value": "self_serve_paid_plan",
+      "gold_value": "no_public_api",
+      "outcome": "wrong",
+      "evidence_url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+    },
+    {
+      "app": "Grain",
+      "field": "access_model",
+      "agent_value": "unknown",
+      "gold_value": "self_serve_free",
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Monday.com",
+      "field": "api_type",
+      "agent_value": [],
+      "gold_value": [
+        "graphql"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "Binance",
+      "field": "api_type",
+      "agent_value": [],
+      "gold_value": [
+        "rest"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Ramp",
+      "field": "api_type",
+      "agent_value": [],
+      "gold_value": [
+        "rest"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    },
+    {
+      "app": "Reducto",
+      "field": "api_type",
+      "agent_value": [],
+      "gold_value": [
+        "rest"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "No evidence URL"
+    },
+    {
+      "app": "PitchBook",
+      "field": "api_type",
+      "agent_value": [],
+      "gold_value": [
+        "rest"
+      ],
+      "outcome": "unanswered",
+      "evidence_url": "None"
+    }
+  ]
+}
