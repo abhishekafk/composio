@@ -85,4 +85,28 @@ Phase v3 maintained 4 rotating Groq API keys with strict JSON schema parsing and
 - **Rule 2 (Strict Evidence Entailment)**: Rejected all access model claims where quotes only mentioned OAuth or app creation without explicitly proving credential acquisition barriers, pricing tiers, or approval reviews.
 - **Rule 3 (Strict Buildability Derivation)**: Derived buildability strictly when BOTH `access_model` and `auth_methods` had verified vendor-domain quotes. All ungrounded buildability claims safely reset to `unknown`.
 - **Rule 4 (Composio Catalog Independence)**: Discontinued injecting authentication methods from the Composio catalog benchmark. Benchmarks are now used strictly to flag disagreements via `composio_disagrees: true`.
-- **Rule 5 (Conservative needs_human)**: `needs_human: true` asserted for 94 of 100 apps due to strict vendor quote requirements on access and buildability.
+---
+
+## Phase v4 (Zero-Credit Crawler, Chunk Ranking & Jina Fallback) Execution Notes
+
+### 1. Zero Search Credits & Crawler Architecture
+Phase v4 consumed **0 Tavily search credits** (remaining balance: 700 / 1,000 monthly credits).
+- **Link Sources Probed**: `/llms.txt`, `/sitemap.xml`, and the vendor documentation root homepage.
+- **Pages Fetched per App**: Min = 0, Median = 7.0, Max = 16 (including newly discovered targeted subpages and existing cached documentation).
+- **Automated Access Blocks**: `harvestapp.com` disallowed root agent scraping via `robots.txt`.
+- **Jina Reader Fallback**: Successfully engaged for 5 JavaScript-rendered or Cloudflare-protected documentation portals:
+  - Salesforce Commerce Cloud (`developer.salesforce.com`)
+  - Sentry (`docs.sentry.io`)
+  - Ramp (`docs.ramp.com`)
+  - PitchBook (`pitchbook.com`)
+  - Otter AI (`help.otter.ai`)
+
+### 2. Chunk Ranking & LLM Extraction
+- Documents were segmented into 800-character sliding windows with 150-character overlap, ranked by keyword density (`authenticat`, `token`, `api key`, `oauth`, `pricing`, `plan`, `free`, `trial`, `approval`, `mcp`).
+- Verified across 5 rotating Groq API keys with seamless fallback between `openai/gpt-oss-120b` and `openai/gpt-oss-20b`.
+- 100% of non-unknown fields in `data/runs/v4.jsonl` are supported by verbatim vendor-domain quotes without ellipses.
+
+### 3. Key Upgrades in v4
+- Resolved missing authentication schemes for 8 additional platforms (e.g., GoHighLevel, Magento, Gumroad, Amazon Selling Partner, Pinterest, systeme.io).
+- Successfully resolved DataForSEO from `unknown` to `self_serve_free` and `buildable_now` with verified account dashboard evidence.
+- `needs_human: true` stands at 93/100 apps under the strict vendor quote requirement.

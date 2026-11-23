@@ -38,6 +38,11 @@ def main():
     v3_parser.add_argument("--limit", type=int, default=None, help="Limit number of apps to verify")
     v3_parser.add_argument("--force", action="store_true", help="Force re-verification overwriting existing runs")
 
+    # verify-v4 command (Phase v4)
+    v4_parser = subparsers.add_parser("verify-v4", help="Run Phase v4 zero-credit crawler & verification loops (v3 -> v4)")
+    v4_parser.add_argument("--limit", type=int, default=None, help="Limit number of apps to verify")
+    v4_parser.add_argument("--force", action="store_true", help="Force re-verification overwriting existing runs")
+
     args = parser.parse_args()
 
     if args.command == "benchmarks":
@@ -56,6 +61,10 @@ def main():
     elif args.command == "verify-v3":
         from pipeline.verify_v3 import run_phase_v3
         run_phase_v3(limit=args.limit, force=args.force)
+
+    elif args.command == "verify-v4":
+        from pipeline.verify_v4 import run_phase_v4
+        run_phase_v4(limit=args.limit, force=args.force)
 
     else:
         parser.print_help()
