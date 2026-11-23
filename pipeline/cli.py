@@ -28,6 +28,11 @@ def main():
     v1_parser.add_argument("--limit", type=int, default=None, help="Limit number of apps to research")
     v1_parser.add_argument("--force", action="store_true", help="Force re-research overwriting existing runs")
 
+    # verify command (Phase 4)
+    v2_parser = subparsers.add_parser("verify", help="Run Phase 4 verification loops (v1 -> v2)")
+    v2_parser.add_argument("--limit", type=int, default=None, help="Limit number of apps to verify")
+    v2_parser.add_argument("--force", action="store_true", help="Force re-verification overwriting existing runs")
+
     args = parser.parse_args()
 
     if args.command == "benchmarks":
@@ -38,6 +43,10 @@ def main():
     elif args.command == "research-v1":
         from pipeline.research import run_v1_pipeline
         run_v1_pipeline(limit=args.limit, force=args.force)
+
+    elif args.command == "verify":
+        from pipeline.verify import run_phase4_verification
+        run_phase4_verification(limit=args.limit, force=args.force)
 
     else:
         parser.print_help()

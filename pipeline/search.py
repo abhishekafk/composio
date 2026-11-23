@@ -69,7 +69,11 @@ def search_tavily(
 
     kwargs: Dict[str, Any] = {"max_results": max_results}
     if include_domains:
-        kwargs["include_domains"] = include_domains
+        clean_domains = [d for d in include_domains if d and "." in d and not any(c in d for c in [" ", "(", ")", "/"])]
+        if clean_domains:
+            kwargs["include_domains"] = clean_domains
+        else:
+            logger.warning(f"All domains in include_domains were invalid: {include_domains}. Skipping domain filter.")
 
     last_err = None
     for attempt in range(4):

@@ -68,7 +68,7 @@ def get_groq_api_keys() -> List[str]:
     """Return all available Groq API keys for rotation."""
     load_dotenv()
     keys = []
-    for k in ["GROQ_API_KEY", "GROQ_API_KEY_2", "GROQ_API_KEY_3"]:
+    for k in ["GROQ_API_KEY", "GROQ_API_KEY_2", "GROQ_API_KEY_3", "GROQ_API_KEY_4"]:
         val = os.getenv(k)
         if val and val.strip():
             keys.append(val.strip())
