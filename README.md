@@ -2,7 +2,7 @@
 
 An agent pipeline that researches 100 apps (auth, self-serve vs gated, API type, MCP status, buildability, evidence), plus a gold set and scoring script that measure how accurate it is, and a one-page case study built from the results.
 
-- **Live case study:** `LIVE_LINK`
+- **Live case study:** https://composio-dun.vercel.app/
 - **Final data:** `data/final_100.jsonl` and `data/final_100.csv`
 - **Results in one line:** accuracy when the agent answered rose from 73% (v1) to 81% (v4) on a 48-app gold set, and answers backed by a vendor quote rose from 74% to 97%. The agent now says "unknown" instead of guessing, so overall correctness moved little (44% to 45%). Details and limits are on the case-study page.
 
