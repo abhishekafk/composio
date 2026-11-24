@@ -1,0 +1,10 @@
+python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
+pip install -r requirements.txt && pip install -e .
+cp .env.example .env        # add GROQ_API_KEY and TAVILY_API_KEY
+
+python -m pipeline.cli research-v1 --limit 1          # quick test on one app
+python -m pipeline.cli research-v1                    # v1: search + extract, all 100 apps
+python -m pipeline.cli verify                         # v2: verification rules
+python -m pipeline.cli verify-v3                      # v3: strict vendor-quote check
+python -m pipeline.cli verify-v4                      # v4: crawler + chunk ranking
+python -m pipeline.score                              # score every run against the gold set

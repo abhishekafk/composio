@@ -1,0 +1,1055 @@
+{
+  "_note": "Post-hoc tiered analysis informed by gold scores. v4 value used when answered (tier=verified), otherwise v2 value (tier=inferred).",
+  "tier_distribution_in_gold": {
+    "verified": 76,
+    "inferred": 36,
+    "unanswered": 24
+  },
+  "tier_accuracy_when_answered": {
+    "verified": 0.8092105263157895,
+    "inferred": 0.6805555555555556
+  },
+  "results": {
+    "combined": {
+      "all": {
+        "subset_size": 48,
+        "summary": {
+          "scored": 136,
+          "answered": 112,
+          "coverage": 0.8235294117647058,
+          "accuracy_when_answered": 0.7678571428571429,
+          "overall_correct": 0.6323529411764706,
+          "exact_overall": 0.5735294117647058,
+          "partial_overall": 0.11764705882352941,
+          "exact_count": 78,
+          "partial_count": 16,
+          "wilson_ci": [
+            0.548720230638835,
+            0.7087141834790258
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 42,
+            "answered": 40,
+            "coverage": 0.9523809523809523,
+            "accuracy_when_answered": 0.6375,
+            "overall_correct": 0.6071428571428571,
+            "exact_overall": 0.42857142857142855,
+            "partial_overall": 0.35714285714285715,
+            "exact_count": 18,
+            "partial_count": 15,
+            "wilson_ci": [
+              0.4565019654615149,
+              0.7398269319604117
+            ],
+            "exact_wilson_ci": [
+              0.2911767569910806,
+              0.5779373113943016
+            ]
+          },
+          "official_mcp": {
+            "scored": 21,
+            "answered": 14,
+            "coverage": 0.6666666666666666,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.6666666666666666,
+            "exact_overall": 0.6666666666666666,
+            "partial_overall": 0.0,
+            "exact_count": 14,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.453734936078793,
+              0.8280522347869133
+            ],
+            "exact_wilson_ci": [
+              0.453734936078793,
+              0.8280522347869133
+            ]
+          },
+          "access_coarse": {
+            "scored": 31,
+            "answered": 26,
+            "coverage": 0.8387096774193549,
+            "accuracy_when_answered": 0.8461538461538461,
+            "overall_correct": 0.7096774193548387,
+            "exact_overall": 0.7096774193548387,
+            "partial_overall": 0.0,
+            "exact_count": 22,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.5340770724789679,
+              0.8390417999161635
+            ],
+            "exact_wilson_ci": [
+              0.5340770724789679,
+              0.8390417999161635
+            ]
+          },
+          "access_model": {
+            "scored": 20,
+            "answered": 15,
+            "coverage": 0.75,
+            "accuracy_when_answered": 0.5,
+            "overall_correct": 0.375,
+            "exact_overall": 0.35,
+            "partial_overall": 0.05,
+            "exact_count": 7,
+            "partial_count": 1,
+            "wilson_ci": [
+              0.19977112369428343,
+              0.590510028427227
+            ],
+            "exact_wilson_ci": [
+              0.18119207593203254,
+              0.5671453066137799
+            ]
+          },
+          "api_type": {
+            "scored": 22,
+            "answered": 17,
+            "coverage": 0.7727272727272727,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.7727272727272727,
+            "exact_overall": 0.7727272727272727,
+            "partial_overall": 0.0,
+            "exact_count": 17,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.5656009139796084,
+              0.8987694350904082
+            ],
+            "exact_wilson_ci": [
+              0.5656009139796084,
+              0.8987694350904082
+            ]
+          }
+        }
+      },
+      "random30": {
+        "subset_size": 30,
+        "summary": {
+          "scored": 84,
+          "answered": 74,
+          "coverage": 0.8809523809523809,
+          "accuracy_when_answered": 0.7837837837837838,
+          "overall_correct": 0.6904761904761905,
+          "exact_overall": 0.6071428571428571,
+          "partial_overall": 0.16666666666666666,
+          "exact_count": 51,
+          "partial_count": 14,
+          "wilson_ci": [
+            0.5851121335881174,
+            0.779180606076446
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 28,
+            "answered": 28,
+            "coverage": 1.0,
+            "accuracy_when_answered": 0.625,
+            "overall_correct": 0.625,
+            "exact_overall": 0.39285714285714285,
+            "partial_overall": 0.4642857142857143,
+            "exact_count": 11,
+            "partial_count": 13,
+            "wilson_ci": [
+              0.4410910570754818,
+              0.7787482245701522
+            ],
+            "exact_wilson_ci": [
+              0.23565712509097758,
+              0.5759092049270506
+            ]
+          },
+          "official_mcp": {
+            "scored": 16,
+            "answered": 11,
+            "coverage": 0.6875,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.6875,
+            "exact_overall": 0.6875,
+            "partial_overall": 0.0,
+            "exact_count": 11,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.4440440274023831,
+              0.8583533304428448
+            ],
+            "exact_wilson_ci": [
+              0.4440440274023831,
+              0.8583533304428448
+            ]
+          },
+          "access_coarse": {
+            "scored": 17,
+            "answered": 16,
+            "coverage": 0.9411764705882353,
+            "accuracy_when_answered": 0.875,
+            "overall_correct": 0.8235294117647058,
+            "exact_overall": 0.8235294117647058,
+            "partial_overall": 0.0,
+            "exact_count": 14,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.5897059347889158,
+              0.9380886086885496
+            ],
+            "exact_wilson_ci": [
+              0.5897059347889158,
+              0.9380886086885496
+            ]
+          },
+          "access_model": {
+            "scored": 7,
+            "answered": 6,
+            "coverage": 0.8571428571428571,
+            "accuracy_when_answered": 0.4166666666666667,
+            "overall_correct": 0.35714285714285715,
+            "exact_overall": 0.2857142857142857,
+            "partial_overall": 0.14285714285714285,
+            "exact_count": 2,
+            "partial_count": 1,
+            "wilson_ci": [
+              0.11808327022474302,
+              0.6974394454497865
+            ],
+            "exact_wilson_ci": [
+              0.08221911853444785,
+              0.6410649549773467
+            ]
+          },
+          "api_type": {
+            "scored": 16,
+            "answered": 13,
+            "coverage": 0.8125,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.8125,
+            "exact_overall": 0.8125,
+            "partial_overall": 0.0,
+            "exact_count": 13,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.569911720215135,
+              0.9340838761935782
+            ],
+            "exact_wilson_ci": [
+              0.569911720215135,
+              0.9340838761935782
+            ]
+          }
+        }
+      },
+      "hard": {
+        "subset_size": 13,
+        "summary": {
+          "scored": 34,
+          "answered": 25,
+          "coverage": 0.7352941176470589,
+          "accuracy_when_answered": 0.64,
+          "overall_correct": 0.47058823529411764,
+          "exact_overall": 0.4411764705882353,
+          "partial_overall": 0.058823529411764705,
+          "exact_count": 15,
+          "partial_count": 2,
+          "wilson_ci": [
+            0.31451532448144137,
+            0.6326325686540023
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 10,
+            "answered": 9,
+            "coverage": 0.9,
+            "accuracy_when_answered": 0.6666666666666666,
+            "overall_correct": 0.6,
+            "exact_overall": 0.5,
+            "partial_overall": 0.2,
+            "exact_count": 5,
+            "partial_count": 2,
+            "wilson_ci": [
+              0.3126742368657031,
+              0.8318193662123929
+            ],
+            "exact_wilson_ci": [
+              0.2365934773921115,
+              0.7634065226078885
+            ]
+          },
+          "official_mcp": {
+            "scored": 2,
+            "answered": 1,
+            "coverage": 0.5,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.5,
+            "exact_overall": 0.5,
+            "partial_overall": 0.0,
+            "exact_count": 1,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.09453148796027488,
+              0.9054685120397251
+            ],
+            "exact_wilson_ci": [
+              0.09453148796027488,
+              0.9054685120397251
+            ]
+          },
+          "access_coarse": {
+            "scored": 10,
+            "answered": 7,
+            "coverage": 0.7,
+            "accuracy_when_answered": 0.7142857142857143,
+            "overall_correct": 0.5,
+            "exact_overall": 0.5,
+            "partial_overall": 0.0,
+            "exact_count": 5,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.2365934773921115,
+              0.7634065226078885
+            ],
+            "exact_wilson_ci": [
+              0.2365934773921115,
+              0.7634065226078885
+            ]
+          },
+          "access_model": {
+            "scored": 10,
+            "answered": 7,
+            "coverage": 0.7,
+            "accuracy_when_answered": 0.42857142857142855,
+            "overall_correct": 0.3,
+            "exact_overall": 0.3,
+            "partial_overall": 0.0,
+            "exact_count": 3,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.10779148645575709,
+              0.603221307388051
+            ],
+            "exact_wilson_ci": [
+              0.10779148645575709,
+              0.603221307388051
+            ]
+          },
+          "api_type": {
+            "scored": 2,
+            "answered": 1,
+            "coverage": 0.5,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.5,
+            "exact_overall": 0.5,
+            "partial_overall": 0.0,
+            "exact_count": 1,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.09453148796027488,
+              0.9054685120397251
+            ],
+            "exact_wilson_ci": [
+              0.09453148796027488,
+              0.9054685120397251
+            ]
+          }
+        }
+      }
+    },
+    "verified_only": {
+      "all": {
+        "subset_size": 48,
+        "summary": {
+          "scored": 136,
+          "answered": 76,
+          "coverage": 0.5588235294117647,
+          "accuracy_when_answered": 0.8092105263157895,
+          "overall_correct": 0.4522058823529412,
+          "exact_overall": 0.40441176470588236,
+          "partial_overall": 0.09558823529411764,
+          "exact_count": 55,
+          "partial_count": 13,
+          "wilson_ci": [
+            0.37101743843056295,
+            0.5360201342490984
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 42,
+            "answered": 33,
+            "coverage": 0.7857142857142857,
+            "accuracy_when_answered": 0.6666666666666666,
+            "overall_correct": 0.5238095238095238,
+            "exact_overall": 0.38095238095238093,
+            "partial_overall": 0.2857142857142857,
+            "exact_count": 16,
+            "partial_count": 12,
+            "wilson_ci": [
+              0.3772249181109455,
+              0.6664037257605937
+            ],
+            "exact_wilson_ci": [
+              0.2499974842912967,
+              0.5318592963510071
+            ]
+          },
+          "official_mcp": {
+            "scored": 21,
+            "answered": 14,
+            "coverage": 0.6666666666666666,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.6666666666666666,
+            "exact_overall": 0.6666666666666666,
+            "partial_overall": 0.0,
+            "exact_count": 14,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.453734936078793,
+              0.8280522347869133
+            ],
+            "exact_wilson_ci": [
+              0.453734936078793,
+              0.8280522347869133
+            ]
+          },
+          "access_coarse": {
+            "scored": 31,
+            "answered": 7,
+            "coverage": 0.22580645161290322,
+            "accuracy_when_answered": 0.8571428571428571,
+            "overall_correct": 0.1935483870967742,
+            "exact_overall": 0.1935483870967742,
+            "partial_overall": 0.0,
+            "exact_count": 6,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.09187022166106346,
+              0.3628021956075911
+            ],
+            "exact_wilson_ci": [
+              0.09187022166106346,
+              0.3628021956075911
+            ]
+          },
+          "access_model": {
+            "scored": 20,
+            "answered": 5,
+            "coverage": 0.25,
+            "accuracy_when_answered": 0.5,
+            "overall_correct": 0.125,
+            "exact_overall": 0.1,
+            "partial_overall": 0.05,
+            "exact_count": 2,
+            "partial_count": 1,
+            "wilson_ci": [
+              0.039566357044647255,
+              0.331277099319884
+            ],
+            "exact_wilson_ci": [
+              0.027866546182390844,
+              0.3010331406064425
+            ]
+          },
+          "api_type": {
+            "scored": 22,
+            "answered": 17,
+            "coverage": 0.7727272727272727,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.7727272727272727,
+            "exact_overall": 0.7727272727272727,
+            "partial_overall": 0.0,
+            "exact_count": 17,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.5656009139796084,
+              0.8987694350904082
+            ],
+            "exact_wilson_ci": [
+              0.5656009139796084,
+              0.8987694350904082
+            ]
+          }
+        }
+      },
+      "random30": {
+        "subset_size": 30,
+        "summary": {
+          "scored": 84,
+          "answered": 50,
+          "coverage": 0.5952380952380952,
+          "accuracy_when_answered": 0.83,
+          "overall_correct": 0.49404761904761907,
+          "exact_overall": 0.42857142857142855,
+          "partial_overall": 0.13095238095238096,
+          "exact_count": 36,
+          "partial_count": 11,
+          "wilson_ci": [
+            0.38975455244859886,
+            0.5988612994368836
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 28,
+            "answered": 22,
+            "coverage": 0.7857142857142857,
+            "accuracy_when_answered": 0.6818181818181818,
+            "overall_correct": 0.5357142857142857,
+            "exact_overall": 0.35714285714285715,
+            "partial_overall": 0.35714285714285715,
+            "exact_count": 10,
+            "partial_count": 10,
+            "wilson_ci": [
+              0.3581272177123478,
+              0.7046840056149761
+            ],
+            "exact_wilson_ci": [
+              0.20705853574705563,
+              0.5416965709436485
+            ]
+          },
+          "official_mcp": {
+            "scored": 16,
+            "answered": 11,
+            "coverage": 0.6875,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.6875,
+            "exact_overall": 0.6875,
+            "partial_overall": 0.0,
+            "exact_count": 11,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.4440440274023831,
+              0.8583533304428448
+            ],
+            "exact_wilson_ci": [
+              0.4440440274023831,
+              0.8583533304428448
+            ]
+          },
+          "access_coarse": {
+            "scored": 17,
+            "answered": 3,
+            "coverage": 0.17647058823529413,
+            "accuracy_when_answered": 0.6666666666666666,
+            "overall_correct": 0.11764705882352941,
+            "exact_overall": 0.11764705882352941,
+            "partial_overall": 0.0,
+            "exact_count": 2,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.03287985051748038,
+              0.34336296173642394
+            ],
+            "exact_wilson_ci": [
+              0.03287985051748038,
+              0.34336296173642394
+            ]
+          },
+          "access_model": {
+            "scored": 7,
+            "answered": 1,
+            "coverage": 0.14285714285714285,
+            "accuracy_when_answered": 0.5,
+            "overall_correct": 0.07142857142857142,
+            "exact_overall": 0.0,
+            "partial_overall": 0.14285714285714285,
+            "exact_count": 0,
+            "partial_count": 1,
+            "wilson_ci": [
+              0.007502841093581708,
+              0.43906530593000737
+            ],
+            "exact_wilson_ci": [
+              2.7755575615628914e-17,
+              0.354329504860854
+            ]
+          },
+          "api_type": {
+            "scored": 16,
+            "answered": 13,
+            "coverage": 0.8125,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.8125,
+            "exact_overall": 0.8125,
+            "partial_overall": 0.0,
+            "exact_count": 13,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.569911720215135,
+              0.9340838761935782
+            ],
+            "exact_wilson_ci": [
+              0.569911720215135,
+              0.9340838761935782
+            ]
+          }
+        }
+      },
+      "hard": {
+        "subset_size": 13,
+        "summary": {
+          "scored": 34,
+          "answered": 16,
+          "coverage": 0.47058823529411764,
+          "accuracy_when_answered": 0.6875,
+          "overall_correct": 0.3235294117647059,
+          "exact_overall": 0.29411764705882354,
+          "partial_overall": 0.058823529411764705,
+          "exact_count": 10,
+          "partial_count": 2,
+          "wilson_ci": [
+            0.19131664832182102,
+            0.49157071049084133
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 10,
+            "answered": 8,
+            "coverage": 0.8,
+            "accuracy_when_answered": 0.625,
+            "overall_correct": 0.5,
+            "exact_overall": 0.4,
+            "partial_overall": 0.2,
+            "exact_count": 4,
+            "partial_count": 2,
+            "wilson_ci": [
+              0.2365934773921115,
+              0.7634065226078885
+            ],
+            "exact_wilson_ci": [
+              0.16818063378760717,
+              0.687325763134297
+            ]
+          },
+          "official_mcp": {
+            "scored": 2,
+            "answered": 1,
+            "coverage": 0.5,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.5,
+            "exact_overall": 0.5,
+            "partial_overall": 0.0,
+            "exact_count": 1,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.09453148796027488,
+              0.9054685120397251
+            ],
+            "exact_wilson_ci": [
+              0.09453148796027488,
+              0.9054685120397251
+            ]
+          },
+          "access_coarse": {
+            "scored": 10,
+            "answered": 3,
+            "coverage": 0.3,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.3,
+            "exact_overall": 0.3,
+            "partial_overall": 0.0,
+            "exact_count": 3,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.10779148645575709,
+              0.603221307388051
+            ],
+            "exact_wilson_ci": [
+              0.10779148645575709,
+              0.603221307388051
+            ]
+          },
+          "access_model": {
+            "scored": 10,
+            "answered": 3,
+            "coverage": 0.3,
+            "accuracy_when_answered": 0.3333333333333333,
+            "overall_correct": 0.1,
+            "exact_overall": 0.1,
+            "partial_overall": 0.0,
+            "exact_count": 1,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.017876264383779095,
+              0.4041493233038372
+            ],
+            "exact_wilson_ci": [
+              0.017876264383779095,
+              0.4041493233038372
+            ]
+          },
+          "api_type": {
+            "scored": 2,
+            "answered": 1,
+            "coverage": 0.5,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.5,
+            "exact_overall": 0.5,
+            "partial_overall": 0.0,
+            "exact_count": 1,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.09453148796027488,
+              0.9054685120397251
+            ],
+            "exact_wilson_ci": [
+              0.09453148796027488,
+              0.9054685120397251
+            ]
+          }
+        }
+      }
+    },
+    "inferred_only": {
+      "all": {
+        "subset_size": 48,
+        "summary": {
+          "scored": 136,
+          "answered": 36,
+          "coverage": 0.2647058823529412,
+          "accuracy_when_answered": 0.6805555555555556,
+          "overall_correct": 0.1801470588235294,
+          "exact_overall": 0.16911764705882354,
+          "partial_overall": 0.022058823529411766,
+          "exact_count": 23,
+          "partial_count": 3,
+          "wilson_ci": [
+            0.12463446152390964,
+            0.2532323710245935
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 42,
+            "answered": 7,
+            "coverage": 0.16666666666666666,
+            "accuracy_when_answered": 0.5,
+            "overall_correct": 0.08333333333333333,
+            "exact_overall": 0.047619047619047616,
+            "partial_overall": 0.07142857142857142,
+            "exact_count": 2,
+            "partial_count": 3,
+            "wilson_ci": [
+              0.03095445204459736,
+              0.20554428020346593
+            ],
+            "exact_wilson_ci": [
+              0.013157555474227117,
+              0.15789821096652734
+            ]
+          },
+          "official_mcp": {
+            "scored": 21,
+            "answered": 0,
+            "coverage": 0.0,
+            "accuracy_when_answered": 0.0,
+            "overall_correct": 0.0,
+            "exact_overall": 0.0,
+            "partial_overall": 0.0,
+            "exact_count": 0,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.0,
+              0.15463848740288078
+            ],
+            "exact_wilson_ci": [
+              0.0,
+              0.15463848740288078
+            ]
+          },
+          "access_coarse": {
+            "scored": 31,
+            "answered": 19,
+            "coverage": 0.6129032258064516,
+            "accuracy_when_answered": 0.8421052631578947,
+            "overall_correct": 0.5161290322580645,
+            "exact_overall": 0.5161290322580645,
+            "partial_overall": 0.0,
+            "exact_count": 16,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.3484042611160614,
+              0.6802971906066411
+            ],
+            "exact_wilson_ci": [
+              0.3484042611160614,
+              0.6802971906066411
+            ]
+          },
+          "access_model": {
+            "scored": 20,
+            "answered": 10,
+            "coverage": 0.5,
+            "accuracy_when_answered": 0.5,
+            "overall_correct": 0.25,
+            "exact_overall": 0.25,
+            "partial_overall": 0.0,
+            "exact_count": 5,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.11186188380284176,
+              0.468700420440179
+            ],
+            "exact_wilson_ci": [
+              0.11186188380284176,
+              0.468700420440179
+            ]
+          },
+          "api_type": {
+            "scored": 22,
+            "answered": 0,
+            "coverage": 0.0,
+            "accuracy_when_answered": 0.0,
+            "overall_correct": 0.0,
+            "exact_overall": 0.0,
+            "partial_overall": 0.0,
+            "exact_count": 0,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.0,
+              0.14865436003830285
+            ],
+            "exact_wilson_ci": [
+              0.0,
+              0.14865436003830285
+            ]
+          }
+        }
+      },
+      "random30": {
+        "subset_size": 30,
+        "summary": {
+          "scored": 84,
+          "answered": 24,
+          "coverage": 0.2857142857142857,
+          "accuracy_when_answered": 0.6875,
+          "overall_correct": 0.19642857142857142,
+          "exact_overall": 0.17857142857142858,
+          "partial_overall": 0.03571428571428571,
+          "exact_count": 15,
+          "partial_count": 3,
+          "wilson_ci": [
+            0.1255672871662877,
+            0.2938411589933144
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 28,
+            "answered": 6,
+            "coverage": 0.21428571428571427,
+            "accuracy_when_answered": 0.4166666666666667,
+            "overall_correct": 0.08928571428571429,
+            "exact_overall": 0.03571428571428571,
+            "partial_overall": 0.10714285714285714,
+            "exact_count": 1,
+            "partial_count": 3,
+            "wilson_ci": [
+              0.028087529508654258,
+              0.24958340222711975
+            ],
+            "exact_wilson_ci": [
+              0.006332537921642067,
+              0.17712155882314598
+            ]
+          },
+          "official_mcp": {
+            "scored": 16,
+            "answered": 0,
+            "coverage": 0.0,
+            "accuracy_when_answered": 0.0,
+            "overall_correct": 0.0,
+            "exact_overall": 0.0,
+            "partial_overall": 0.0,
+            "exact_count": 0,
+            "partial_count": 0,
+            "wilson_ci": [
+              1.3877787807814457e-17,
+              0.19360704574605886
+            ],
+            "exact_wilson_ci": [
+              1.3877787807814457e-17,
+              0.19360704574605886
+            ]
+          },
+          "access_coarse": {
+            "scored": 17,
+            "answered": 13,
+            "coverage": 0.7647058823529411,
+            "accuracy_when_answered": 0.9230769230769231,
+            "overall_correct": 0.7058823529411765,
+            "exact_overall": 0.7058823529411765,
+            "partial_overall": 0.0,
+            "exact_count": 12,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.4686693676056734,
+              0.8671998873345319
+            ],
+            "exact_wilson_ci": [
+              0.4686693676056734,
+              0.8671998873345319
+            ]
+          },
+          "access_model": {
+            "scored": 7,
+            "answered": 5,
+            "coverage": 0.7142857142857143,
+            "accuracy_when_answered": 0.4,
+            "overall_correct": 0.2857142857142857,
+            "exact_overall": 0.2857142857142857,
+            "partial_overall": 0.0,
+            "exact_count": 2,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.08221911853444785,
+              0.6410649549773467
+            ],
+            "exact_wilson_ci": [
+              0.08221911853444785,
+              0.6410649549773467
+            ]
+          },
+          "api_type": {
+            "scored": 16,
+            "answered": 0,
+            "coverage": 0.0,
+            "accuracy_when_answered": 0.0,
+            "overall_correct": 0.0,
+            "exact_overall": 0.0,
+            "partial_overall": 0.0,
+            "exact_count": 0,
+            "partial_count": 0,
+            "wilson_ci": [
+              1.3877787807814457e-17,
+              0.19360704574605886
+            ],
+            "exact_wilson_ci": [
+              1.3877787807814457e-17,
+              0.19360704574605886
+            ]
+          }
+        }
+      },
+      "hard": {
+        "subset_size": 13,
+        "summary": {
+          "scored": 34,
+          "answered": 9,
+          "coverage": 0.2647058823529412,
+          "accuracy_when_answered": 0.5555555555555556,
+          "overall_correct": 0.14705882352941177,
+          "exact_overall": 0.14705882352941177,
+          "partial_overall": 0.0,
+          "exact_count": 5,
+          "partial_count": 0,
+          "wilson_ci": [
+            0.0644945196200384,
+            0.30128019800528627
+          ]
+        },
+        "metrics": {
+          "auth_methods": {
+            "scored": 10,
+            "answered": 1,
+            "coverage": 0.1,
+            "accuracy_when_answered": 1.0,
+            "overall_correct": 0.1,
+            "exact_overall": 0.1,
+            "partial_overall": 0.0,
+            "exact_count": 1,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.017876264383779095,
+              0.4041493233038372
+            ],
+            "exact_wilson_ci": [
+              0.017876264383779095,
+              0.4041493233038372
+            ]
+          },
+          "official_mcp": {
+            "scored": 2,
+            "answered": 0,
+            "coverage": 0.0,
+            "accuracy_when_answered": 0.0,
+            "overall_correct": 0.0,
+            "exact_overall": 0.0,
+            "partial_overall": 0.0,
+            "exact_count": 0,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.0,
+              0.6576188570228346
+            ],
+            "exact_wilson_ci": [
+              0.0,
+              0.6576188570228346
+            ]
+          },
+          "access_coarse": {
+            "scored": 10,
+            "answered": 4,
+            "coverage": 0.4,
+            "accuracy_when_answered": 0.5,
+            "overall_correct": 0.2,
+            "exact_overall": 0.2,
+            "partial_overall": 0.0,
+            "exact_count": 2,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.056682284601656835,
+              0.5098369061640554
+            ],
+            "exact_wilson_ci": [
+              0.056682284601656835,
+              0.5098369061640554
+            ]
+          },
+          "access_model": {
+            "scored": 10,
+            "answered": 4,
+            "coverage": 0.4,
+            "accuracy_when_answered": 0.5,
+            "overall_correct": 0.2,
+            "exact_overall": 0.2,
+            "partial_overall": 0.0,
+            "exact_count": 2,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.056682284601656835,
+              0.5098369061640554
+            ],
+            "exact_wilson_ci": [
+              0.056682284601656835,
+              0.5098369061640554
+            ]
+          },
+          "api_type": {
+            "scored": 2,
+            "answered": 0,
+            "coverage": 0.0,
+            "accuracy_when_answered": 0.0,
+            "overall_correct": 0.0,
+            "exact_overall": 0.0,
+            "partial_overall": 0.0,
+            "exact_count": 0,
+            "partial_count": 0,
+            "wilson_ci": [
+              0.0,
+              0.6576188570228346
+            ],
+            "exact_wilson_ci": [
+              0.0,
+              0.6576188570228346
+            ]
+          }
+        }
+      }
+    }
+  }
+}

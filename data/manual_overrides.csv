@@ -1,0 +1,15 @@
+app,field,old,new,tier,source_url,verified_by,date,note
+Salesforce,official_mcp,none_found,official,manually_verified,https://developer.salesforce.com/docs/platform/hosted-mcp-servers/,human+claude,2026-11-24,
+Podio,official_mcp,none_found,official,manually_verified,https://www.progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide.md,human+claude,2026-11-24,beta
+Lark (Larksuite),official_mcp,none_found,official,manually_verified,https://npmjs.com/package/@larksuiteoapi/lark-mcp,human+claude,2026-11-24,
+GoHighLevel,official_mcp,none_found,official,manually_verified,https://marketplace.gohighlevel.com/docs/other/mcp,human+claude,2026-11-24,
+SendGrid,official_mcp,unknown,unknown,unknown,https://docs.sendgrid.com,human+claude,2026-11-24,docs-only Twilio server reported; no execution server found (unverified)
+Magento (Adobe Commerce),official_mcp,unknown,unknown,unknown,https://developer.adobe.com,human+claude,2026-11-24,"Commerce MCP announced, not released (unverified)"
+fanbasis,official_mcp,unknown,unknown,unknown,https://www.fanbasis.com,human+claude,2026-11-24,no vendor MCP found
+Waterfall.io,official_mcp,unknown,unknown,unknown,https://docs.waterfall.io,human+claude,2026-11-24,no vendor MCP found
+Pipedrive,official_mcp,official,official,verified,https://www.pipedrive.com/en/features/mcp-server,human+claude,2026-11-24,official connector in Claude and ChatGPT
+Zendesk,official_mcp,official,none_found,manually_verified,https://support.zendesk.com/hc/en-us/articles/11105393853210-Announcing-the-general-availability-of-the-MCP-client,claude-research (unverified),2026-11-24,"MCP client GA Aug 2026; server announced May 2026, not GA"
+Telegram,official_mcp,none_found,none_found,manually_verified,https://core.telegram.org,claude-research (unverified),2026-11-24,no vendor MCP found; community servers only
+Sherlock,official_mcp,official,none_found,manually_verified,https://github.com/sherlock-project/sherlock,claude-research (unverified),2026-11-24,community wrapper only
+Shopify,access_model,partner_or_contract,self_serve_free,verified,https://shopify.dev/docs/apps/build/authentication-authorization/legacy/admin-custom-apps,claude-research (human to confirm),2026-11-24,corrected: was partner_or_contract with no evidence; custom apps via Dev Dashboard/dev store; public distribution still needs app review
+Airtable,access_model,customer_only,self_serve_free,verified,https://support.airtable.com/docs/creating-personal-access-tokens,claude-research (human to confirm),2026-11-24,corrected: was customer_only with no evidence; PATs available on all plans; enterprise scopes need Enterprise Scale

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Composio 100-App Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* One scrolling page. Answer first, one accent colour, amber only for caution. */
+:root{--bg:#eef7f0;--panel:#f8fcf9;--ink:#051F20;--muted:#4f6e62;--line:#d2e5d8;--soft:#e2f0e6;
+ --g:#235347;--g2:#163832;--gl:#8EB69B;--hot:#163832;--chipink:#f4fbf6;--warn:#c58a2c;--bad:#b5584e;--gray:#a3bbac;--glow:rgba(142,182,155,.30);--font:'Inter',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#051F20;--panel:#0B2B26;--ink:#DAF1DE;--muted:#8fb09c;--line:#163832;--soft:#0f332d;--g:#8EB69B;--g2:#DAF1DE;--gl:#235347;--hot:#163832;--chipink:#051F20;--warn:#d9a24a;--bad:#d9786e;--gray:#3d5a50;--glow:rgba(35,83,71,.55);color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg) radial-gradient(900px 520px at 0% 0%,var(--glow),transparent 65%) no-repeat;color:var(--ink);font:16px/1.5 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+/* jump bar */
+.jump{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.jump .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.jump .wrap::-webkit-scrollbar{display:none}
+.jump a{white-space:nowrap;text-decoration:none;font-size:13px;font-weight:600;color:var(--muted);padding:7px 14px;border-radius:99px}
+.jump a.on{background:var(--ink);color:var(--bg)}
+section{padding:46px 0 6px}
+h1{font-size:clamp(30px,5.6vw,50px);line-height:1.06;letter-spacing:-.03em;margin:0 0 12px;font-weight:700}
+h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);font-weight:800;margin:0 0 6px}
+.lead{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:640px;margin:0 0 24px}
+.big{font-size:clamp(21px,3.2vw,28px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:0 0 18px;max-width:700px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}
+.row{display:grid;gap:14px}
+.k3{grid-template-columns:repeat(3,1fr)} .k2{grid-template-columns:repeat(2,1fr)}
+.kpi .n{font-size:clamp(42px,7.5vw,62px);font-weight:700;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.kpi .t{font-weight:700;margin-top:8px} .kpi .d{font-size:13.5px;color:var(--muted);margin-top:2px}
+.kpi.hot{background:var(--hot);color:#DAF1DE;border:0} .kpi.hot .d{color:#8EB69B}
+.kpi.caution .n{color:var(--warn)}
+.cap{font-size:14px;color:var(--muted);margin:10px 0 0}
+/* bars */
+.hb{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;margin:9px 0;font-size:14px;font-weight:600}
+.track{height:26px;border-radius:99px;background:var(--soft);overflow:hidden;display:flex}
+.track i{display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font:700 12px var(--font);font-style:normal;color:var(--chipink);min-width:0;white-space:nowrap}
+.hatch{background:repeating-linear-gradient(135deg,var(--gray) 0 2px,transparent 2px 6px) !important;color:var(--muted) !important}
+.legend{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:12px}
+.legend em{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.legend em::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--c)}
+.legend em.h::before{background:repeating-linear-gradient(135deg,var(--gray) 0 2px,transparent 2px 4px);border:1px solid var(--gray)}
+/* category stacks */
+.cat{display:grid;grid-template-columns:130px 1fr 34px;gap:10px;align-items:center;margin:7px 0;font-size:14px;font-weight:600;cursor:pointer;border:0;background:none;width:100%;text-align:left;padding:0;color:inherit}
+.cat:hover .track{outline:2px solid var(--g)}
+.cat b{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+/* versions */
+.cols{display:flex;gap:14px;align-items:flex-end;height:240px;border-bottom:2px solid var(--line);padding-bottom:28px;margin:22px 0 0}
+.col{flex:1;height:100%;position:relative}
+.pair{display:flex;gap:6px;height:100%;align-items:flex-end;justify-content:center}
+.bar{width:42%;max-width:54px;border-radius:12px 12px 3px 3px;position:relative;min-height:3px}
+.bar em{position:absolute;top:-21px;left:50%;transform:translateX(-50%);font:700 12px var(--font);font-style:normal}
+.col>span{position:absolute;bottom:-28px;left:0;right:0;text-align:center;font-weight:700;font-size:14px}
+.col>span small{display:block;font-weight:500;font-size:11px;color:var(--muted)}
+.range{position:relative;height:12px;border-radius:99px;background:var(--soft);margin:38px 8px 22px}
+.range i{position:absolute;top:0;bottom:0;border-radius:99px;background:var(--gl)}
+.range b{position:absolute;top:-6px;width:24px;height:24px;border-radius:50%;background:var(--g);transform:translateX(-50%);border:3px solid var(--panel)}
+.range em{position:absolute;top:-30px;transform:translateX(-50%);font:700 13px var(--font);font-style:normal;white-space:nowrap}
+.range u{position:absolute;top:20px;transform:translateX(-50%);font-size:12px;color:var(--muted);text-decoration:none}
+/* failures */
+.fails{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fail .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:10px;color:var(--chipink)}
+.fail b{display:block;margin-bottom:3px} .fail p{margin:0;color:var(--muted);font-size:14.5px}
+/* explorer */
+.ctrl{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
+.ctrl input,.ctrl select{font:inherit;font-size:14px;padding:10px 14px;border:1px solid var(--line);border-radius:99px;background:var(--panel);color:var(--ink)}
+.ctrl input{flex:1;min-width:160px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:11px 8px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+tr.r{cursor:pointer} tr.r:hover td{background:var(--soft)} tr.r:focus-visible{outline:2px solid var(--g);outline-offset:-2px}
+.detail td{background:var(--soft);font-size:13px}
+.detail blockquote{margin:3px 0 9px;padding-left:10px;border-left:3px solid var(--line);color:var(--muted)}
+.detail a{color:var(--g);word-break:break-all}
+.chip{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:99px;color:var(--chipink);white-space:nowrap}
+.c-verified{background:var(--g)} .c-manually_verified{background:var(--g2)} .c-inferred{background:var(--warn);color:#051F20} .c-unknown{background:var(--gray);color:#051F20}
+.note{font-size:13px;color:var(--muted)}
+.scroll{max-height:520px;overflow:auto}
+details{border-top:1px solid var(--line);padding:14px 0} details:first-of-type{border:0}
+summary{cursor:pointer;font-weight:700}
+details ul{color:var(--muted);padding-left:20px;margin:8px 0 0} details li{margin:5px 0}
+footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
+@media (max-width:760px){
+ .k3,.k2,.fails{grid-template-columns:1fr}
+ .k3.keep{grid-template-columns:1fr 1fr} .k3.keep .kpi:first-child{grid-column:span 2}
+ .hb{grid-template-columns:78px 1fr} .cat{grid-template-columns:96px 1fr 28px}
+ th:nth-child(2),td:nth-child(2){display:none}
+ section{padding-top:36px}
+}
+
+.k4{grid-template-columns:repeat(4,1fr)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.step{position:relative;border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:16px}
+.step .no{font:700 12px var(--font);color:var(--g);letter-spacing:.08em}
+.step b{display:block;margin:2px 0 4px}.step p{margin:0;color:var(--muted);font-size:14px}
+.step.human{border:1.5px dashed var(--warn)}
+.step.human .no{color:var(--warn)}
+.badge{display:inline-block;font:700 10.5px var(--font);padding:2px 8px;border-radius:99px;background:var(--warn);color:#051F20;margin-left:6px;vertical-align:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.names{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.names span{font-size:13px;font-weight:600;padding:5px 11px;border-radius:99px;background:var(--soft)}
+.names.win span{background:var(--g);color:var(--chipink)}
+.btn{font:inherit;font-size:14px;font-weight:600;padding:10px 16px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--g);color:var(--chipink);border-color:transparent}
+pre{background:var(--soft);border-radius:14px;padding:14px;overflow:auto;font-size:13px;margin:12px 0 0;white-space:pre-wrap}
+.mt{width:100%;font-size:14px}.mt td,.mt th{padding:9px 6px}
+.up{color:var(--g);font-weight:700}.dn{color:var(--bad);font-weight:700}
+.one{font-size:12.5px;color:var(--muted);font-weight:400;display:block}
+@media (max-width:760px){.k4{grid-template-columns:1fr 1fr}.flow,.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="jump" aria-label="Sections"><div class="wrap" id="jump"></div></nav>
+<div class="wrap">
+
+<section id="patterns">
+  <h2>Composio take-home · 100 apps</h2>
+  <h1>Most of these apps can become agent toolkits. What is rare is proof.</h1>
+  <p class="lead">An agent researched all 100. OAuth2 is the norm and hard blockers are few. The weak spot is whether access is actually proven.</p>
+  <div class="row k4">
+    <div class="card kpi"><div class="n" id="k1"></div><div class="t">use OAuth2</div><div class="d">the most common auth</div></div>
+    <div class="card kpi hot"><div class="n" id="k2"></div><div class="t">look buildable now</div><div class="d" id="k2d"></div></div>
+    <div class="card kpi caution"><div class="n" id="k3"></div><div class="t">proven by a vendor quote</div><div class="d">the rest need a signup check</div></div>
+    <div class="card kpi"><div class="n" id="k4"></div><div class="t">have an official MCP</div><div class="d" id="k4d"></div></div>
+  </div>
+
+  <p class="big" style="margin-top:34px">Auth: OAuth2 dominates, then bearer tokens and API keys.</p>
+  <div class="card"><div id="auth"></div><p class="cap">An app can list several methods, so counts add up to more than 100.</p></div>
+
+  <p class="big" style="margin-top:34px">Self-serve vs gated, by category.</p>
+  <div class="card"><div id="cats"></div>
+    <div class="legend"><em style="--c:var(--g)">self-serve</em><em style="--c:var(--warn)">gated</em><em class="h">unknown</em></div>
+    <p class="cap">Tap a category to list its apps. Most categories are mostly self-serve. Unknowns cluster where the vendor hides its docs.</p></div>
+
+  <p class="big" style="margin-top:34px">Blockers are rare. Most apps have none.</p>
+  <div class="card"><div id="blk"></div><p class="cap">"Unknown" is the biggest group after "none", so I could not prove or rule out a blocker for those.</p></div>
+
+  <p class="big" style="margin-top:34px">Easy wins vs needs outreach.</p>
+  <div class="two">
+    <div class="card"><b>Easy wins, proven</b> <span class="note" id="ewn"></span><div class="names win" id="ew"></div><p class="cap" id="ewc"></p></div>
+    <div class="card"><b>Needs outreach</b> <span class="note" id="onn"></span><div class="names" id="on"></div><p class="cap">App review, partnership, or an account tier is in the way.</p></div>
+  </div>
+</section>
+
+<section id="findings">
+  <h2>Findings</h2>
+  <p class="big">All 100 apps in one table. Tap a row for the quote and link behind each answer.</p>
+  <div class="ctrl">
+    <input id="q" type="search" placeholder="Search apps" aria-label="Search apps">
+    <select id="fc" aria-label="Category"><option value="">All categories</option></select>
+    <select id="fa" aria-label="Access"><option value="">Any access</option><option value="self_serve">Self-serve</option><option value="gated">Gated</option><option value="unknown">Unknown</option></select>
+    <select id="fm" aria-label="MCP"><option value="">Any MCP</option><option value="official">Official MCP</option><option value="none_found">None found</option><option value="unknown">Unknown</option></select>
+    <select id="fb" aria-label="Buildable"><option value="">Any buildability</option><option value="buildable_now">Buildable now</option><option value="proven">Buildable, proven</option><option value="buildable_after_approval">After approval</option><option value="needs_partnership">Needs partnership</option><option value="unknown">Unknown</option></select>
+  </div>
+  <p class="note" id="count"></p>
+  <div class="card scroll" style="padding:4px 14px"><table id="grid"><thead><tr><th>App</th><th>Auth</th><th>Access</th><th>API</th><th>MCP</th><th>Verdict</th></tr></thead><tbody></tbody></table></div>
+  <p class="note" style="margin-top:8px">One-line descriptions were written by me from general knowledge, not by the agent. A "checked" or "verified" tag means a quote from the vendor's own page backs the answer.</p>
+</section>
+
+<section id="agent">
+  <h2>The agent</h2>
+  <p class="big">A six-step pipeline. Humans checked it at the points marked in amber.</p>
+  <div class="flow">
+    <div class="step"><span class="no">1 · INPUT</span><b>100 apps</b><p>The list from the brief, with its docs hints.</p></div>
+    <div class="step"><span class="no">2 · SEARCH</span><b>Find vendor docs</b><p>Tavily search for each app and each field.</p></div>
+    <div class="step"><span class="no">3 · CRAWL</span><b>Read the pages</b><p>A zero-credit crawler with a Jina reader fallback when sites block bots.</p></div>
+    <div class="step"><span class="no">4 · EXTRACT</span><b>Answer with a quote</b><p>Groq gpt-oss-120b, falling back to 20b. Every answer must cite a vendor quote.</p></div>
+    <div class="step"><span class="no">5 · VERIFY</span><b>Rules and registry</b><p>Quote must support the claim. MCP checked against the MCP Registry. Unsupported "none found" becomes unknown.</p></div>
+    <div class="step"><span class="no">6 · TIER</span><b>Label the proof</b><p>Each field is verified, hand-checked, inferred or unknown.</p></div>
+  </div>
+  <div class="card" style="margin-top:14px"><b>Where a human was needed <span class="badge">HUMAN</span></b>
+    <ul style="color:var(--muted);padding-left:20px;margin:8px 0 0">
+      <li>Built the gold set of 48 apps and audited it before freezing.</li>
+      <li>Hand-checked Pipedrive, Zendesk, Telegram and Sherlock against vendor pages.</li>
+      <li>Rejected wrong Composio catalog matches (Sherlock, Mermaid CLI and one more).</li>
+      <li>Corrected Shopify and Airtable gating after the run. Logged every change in <code>manual_overrides.csv</code>.</li></ul></div>
+  <div class="card" style="margin-top:14px;border-color:var(--warn)"><b>What I did not do</b>
+    <p style="margin:6px 0 0;color:var(--muted)">I used Composio's catalog API to see which apps already have a toolkit (81 of 100 do). I did not build the agent on Composio's SDK or MCP, and I did not use browser automation for verification. Free-tier limits and time pushed me to Groq, Tavily and Jina instead.</p></div>
+</section>
+
+<section id="verify">
+  <h2>Verification</h2>
+  <p class="big">Accurate on about 4 in 5 answers. Accuracy rose only 8 points, but evidence quality jumped.</p>
+  <div class="card"><b>Four versions on the same 48 hand-labelled apps</b>
+    <div class="cols" id="cols"></div>
+    <div class="legend" style="margin-top:44px"><em style="--c:var(--g)">accurate when it answered</em><em style="--c:var(--warn)">correct overall (unknown counts as a miss)</em></div>
+    <p class="cap">v1 guessed. v2 added verification rules. v3 required a vendor quote for every answer. v4 added a crawler and ranked page chunks. The agent now says "unknown" instead of guessing, so the overall score barely moved.</p></div>
+
+  <div class="row k2" style="margin-top:14px">
+    <div class="card"><b>By field, accurate when answered</b>
+      <table class="mt" id="ft"><thead><tr><th>Field</th><th>v1</th><th>v4</th><th>Answered v4</th></tr></thead><tbody></tbody></table></div>
+    <div class="card"><b>Answers backed by a vendor quote</b><div id="qshare" style="margin-top:12px"></div></div>
+  </div>
+
+  <div class="two" style="margin-top:14px">
+    <div class="card"><b>Hits</b><ul style="color:var(--muted);padding-left:20px;margin:8px 0 0">
+      <li>Official MCP: 14 of 14 verifiable answers correct in v4, up from 0% coverage in v2.</li>
+      <li>API type: 17 of 17 answered correctly, in every version.</li>
+      <li>Vendor-quote share: 74% to 97%.</li></ul></div>
+    <div class="card"><b>Misses</b><ul style="color:var(--muted);padding-left:20px;margin:8px 0 0">
+      <li>"No MCP" was wrong for Salesforce, Lark, HighLevel and Podio.</li>
+      <li>Shopify and Airtable were guessed "gated". Both are self-serve.</li>
+      <li>Access answers fell from 42% to 19% correct overall, because strict checks refuse to guess.</li>
+      <li>Auth methods stay near 67%: the agent often lists too few or too many.</li></ul></div>
+  </div>
+
+  <div class="row k2" style="margin-top:14px">
+    <div class="card"><b>Whole-record score, with its error range</b><div class="range" id="range"></div>
+      <p class="cap">63.2%, but the range is wide. I designed this scoring recipe after seeing the results, so treat it as post-hoc.</p></div>
+    <div class="card"><b>How well each field is proven, all 100 apps</b><div id="tiers" style="margin-top:12px"></div>
+      <div class="legend"><em style="--c:var(--g)">verified quote</em><em style="--c:var(--g2)">hand-checked</em><em style="--c:var(--warn)">inferred</em><em class="h">unknown</em></div>
+      <p class="cap">Gating is the weakest field.</p></div>
+  </div>
+</section>
+
+<section id="proof">
+  <h2>Proof</h2>
+  <p class="big">The data, the page and the code are all yours to inspect.</p>
+  <div class="card">
+    <p style="margin:0 0 12px;color:var(--muted)">This page is generated from the same JSON the agent produced. The full dataset is embedded in the page as JSON (<code>#research-data</code>), so an agent can read it directly.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn pri" id="dj">Download JSON</button><button class="btn" id="dc">Download CSV</button><a class="btn" id="repoLink" href="REPO_URL" rel="noopener">Source repo</a></div>
+    <b style="display:block;margin-top:18px">Run the research agent</b>
+    <pre>RUN_CMDS</pre>
+  </div>
+</section>
+
+<section id="limits">
+  <h2>Limits</h2>
+  <p class="big">What the numbers do not prove.</p>
+  <div class="card">
+  <details open><summary>Read this before trusting the scores</summary><ul>
+   <li>48 gold apps is small. The v1 to v4 intervals overlap, so 73% to 81% is a trend, not proof.</li>
+   <li>Gold was built partly with a research agent. 44 of 48 labels were blind. It has no "no MCP" labels, so those claims are unscored.</li>
+   <li>The tiered record and the api_key vs bearer check (+3 points overall) were designed after seeing the scores.</li>
+   <li>v4 committed to an answer on about 56% of fields (45.2% overall divided by 80.9%).</li>
+   <li>63 apps look buildable, but only 7 are proven. 56 still need a signup check.</li></ul></details>
+  <details><summary>Disclosures</summary><ul>
+   <li>Three free Groq keys were rotated to stay inside rate limits. 120b and 20b were mixed, with 4 fallback failures.</li>
+   <li>Jina reader fetched pages after bot blocks (Salesforce Commerce Cloud, Sentry, PitchBook, Otter AI). Harvest blocked robots.</li>
+   <li>32 access answers have no quote or URL.</li>
+   <li>Shopify and Airtable access were corrected after the run and still await a human check.</li>
+   <li>API breadth is not captured. The data has the API type (REST, GraphQL and so on) only.</li>
+   <li>Built with Antigravity as the coding helper. Free tiers only.</li></ul></details>
+  <details><summary>With more time</summary><ul>
+   <li>Script real signups for the 56 apps that only look buildable.</li>
+   <li>Rebuild the agent on Composio's SDK and MCP.</li>
+   <li>Add browser-based checks, grow the gold set and add "no MCP" labels.</li></ul></details>
+  </div>
+</section>
+<footer>Data and code: <span id="repo">REPO_URL</span></footer>
+</div>
+<script type="application/json" id="research-data">/*DATA*/[]</script>
+<script>
+const DATA=JSON.parse(document.getElementById('research-data').textContent);
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const N=DATA.length;
+const CAT={crm_sales:'CRM and sales',support:'Support',comms:'Comms',marketing:'Marketing',ecommerce:'E-commerce',data_seo_scraping:'Data and scraping',dev_infra:'Dev infra',productivity_pm:'Productivity',finance:'Finance',ai_research_media:'AI and media'};
+const cats=Object.keys(CAT);
+const list=v=>Array.isArray(v)?(v.length?v.join(', '):'none listed'):(v||'unknown');
+const cl=s=>String(s||'').replace(/_/g,' ');
+const chip=t=>`<span class="chip c-${esc(t)}">${esc(t==='manually_verified'?'checked':t)}</span>`;
+const cnt=f=>{const k={};DATA.forEach(r=>{const v=f(r);k[v]=(k[v]||0)+1});return k};
+const seg=(w,bg,t,cls)=>w?`<i class="${cls||''}" style="width:${w}%;${bg?'background:'+bg:''}">${t||''}</i>`:'';
+const buildNow=DATA.filter(r=>r.buildability==='buildable_now');
+const proven=buildNow.filter(r=>r.access_model_tier==='verified');
+const off=DATA.filter(r=>r.official_mcp_value==='official');
+const offV=off.filter(r=>r.official_mcp_tier==='verified'||r.official_mcp_tier==='manually_verified');
+const au={};DATA.forEach(r=>(r.auth_methods_value||[]).forEach(m=>au[m]=(au[m]||0)+1));
+$('#k1').textContent=(au.oauth2||0)+'%';
+$('#k2').textContent=buildNow.length;$('#k2d').textContent=`out of ${N} apps`;
+$('#k3').textContent=proven.length;$('#k4').textContent=off.length;$('#k4d').textContent=`${offV.length} proven or hand-checked`;
+const SEC=[['patterns','Patterns'],['findings','Findings'],['agent','Agent'],['verify','Verification'],['proof','Proof'],['limits','Limits']];
+$('#jump').innerHTML=SEC.map(([k,l])=>`<a href="#${k}" data-s="${k}">${l}</a>`).join('');
+// auth
+const am=Math.max(...Object.values(au));
+const AL={oauth2:'OAuth2',bearer_token:'Bearer token',api_key:'API key',basic:'Basic',none:'None',mtls:'mTLS',jwt_service_account:'JWT service acct',signed_request:'Signed request'};
+$('#auth').innerHTML=Object.entries(au).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="hb" style="grid-template-columns:120px 1fr"><span>${esc(AL[k]||k)}</span><div class="track" style="height:22px"><i style="width:${v/am*100}%;background:var(--g)">${v}</i></div></div>`).join('');
+// categories by access
+$('#cats').innerHTML=cats.map(c=>{const rs=DATA.filter(r=>r.category===c),t=rs.length||1,k={self_serve:0,gated:0,unknown:0};rs.forEach(r=>k[r.access_coarse_value==='self_serve'?'self_serve':r.access_coarse_value==='gated'?'gated':'unknown']++);
+ return `<button class="cat" data-cat="${c}" aria-label="${esc(CAT[c])}: ${k.self_serve} self-serve, ${k.gated} gated, ${k.unknown} unknown"><span>${esc(CAT[c])}</span><div class="track">${seg(k.self_serve/t*100,'var(--g)',k.self_serve)}${seg(k.gated/t*100,'var(--warn)',k.gated)}${seg(k.unknown/t*100,'',k.unknown,'hatch')}</div><b>${rs.length}</b></button>`}).join('');
+// blockers
+const BL={none:'No blocker',unknown:'Unknown',app_review:'App review',account:'Account tier',missing_auth:'No auth path',partnership_required:'Partnership'};
+const bk=cnt(r=>r.primary_blocker||'unknown');const bm=Math.max(...Object.values(bk));
+$('#blk').innerHTML=Object.entries(bk).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="hb" style="grid-template-columns:120px 1fr"><span>${esc(BL[k]||cl(k))}</span><div class="track" style="height:22px"><i style="width:${v/bm*100}%;background:${k==='none'?'var(--g)':k==='unknown'?'var(--gray)':'var(--warn)'};color:${k==='unknown'?'var(--ink)':''}">${v}</i></div></div>`).join('');
+// wins vs outreach
+const outreach=DATA.filter(r=>r.buildability==='buildable_after_approval'||r.buildability==='needs_partnership');
+$('#ew').innerHTML=proven.map(r=>`<span>${esc(r.app)}</span>`).join('');$('#ewn').textContent=`${proven.length} apps`;
+$('#ewc').textContent=`${buildNow.length-proven.length} more look buildable but still need a signup check.`;
+$('#on').innerHTML=outreach.map(r=>`<span>${esc(r.app)}</span>`).join('');$('#onn').textContent=`${outreach.length} apps`;
+// versions
+const V=[['v1','naive',73.2,44.1],['v2','rules',73.5,52.9],['v3','quote check',79.2,41.9],['v4','crawler',80.9,45.2]];
+$('#cols').innerHTML=V.map(v=>`<div class="col"><div class="pair"><div class="bar" style="height:${v[2]*0.82}%;background:var(--g)"><em>${v[2]}</em></div><div class="bar" style="height:${v[3]*0.82}%;background:var(--warn)"><em>${v[3]}</em></div></div><span>${v[0]}<small>${v[1]}</small></span></div>`).join('');
+const FT=[['Auth methods',60.8,66.7,'79%'],['Official MCP',75.0,100,'67%'],['Access (coarse)',86.7,85.7,'23%'],['Access (fine)',50.0,50.0,'25%'],['API type',100,100,'77%']];
+$('#ft tbody').innerHTML=FT.map(f=>{const d=f[2]-f[1];return `<tr><td>${f[0]}</td><td>${f[1]}%</td><td>${f[2]}% <span class="${d>0.5?'up':d<-0.5?'dn':''}">${d>0.5?'▲':d<-0.5?'▼':'–'}</span></td><td>${f[3]}</td></tr>`}).join('');
+$('#qshare').innerHTML=[['v1',74.4],['v2',66.3],['v3',97.2],['v4',97.4]].map(q=>`<div class="hb" style="grid-template-columns:40px 1fr"><span>${q[0]}</span><div class="track"><i style="width:${q[1]}%;background:var(--g)">${q[1]}%</i></div></div>`).join('');
+$('#range').innerHTML=`<i style="left:54.9%;width:16%"></i><b style="left:63.2%"></b><em style="left:63.2%">63.2%</em><u style="left:54.9%">54.9</u><u style="left:70.9%">70.9</u>`;
+const T=['verified','manually_verified','inferred','unknown'],TC=['var(--g)','var(--g2)','var(--warn)',''];
+$('#tiers').innerHTML=[['auth_methods','Auth'],['api_type','API type'],['official_mcp','MCP'],['access_model','Access']].map(([f,l])=>{const k=cnt(r=>r[f+'_tier']);
+ return `<div class="hb" style="grid-template-columns:70px 1fr"><span>${l}</span><div class="track" role="img" aria-label="${l} proof split">${T.map((t,i)=>seg(k[t]/N*100||0,TC[i],k[t]>=8?k[t]:'',t==='unknown'?'hatch':'')).join('')}</div></div>`}).join('');
+// explorer
+cats.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=CAT[c];$('#fc').appendChild(o)});
+const ev=(l,val,t,url,q,note)=>`<div style="margin-bottom:6px"><b>${l}</b> ${chip(t)} ${esc(val)}${note?` <span class="note">(${esc(note)})</span>`:''}${url?`<br><a href="${esc(url)}" rel="noopener" target="_blank">${esc(url)}</a>`:''}${q?`<blockquote>${esc(q)}</blockquote>`:'<br><span class="note">no quote stored</span>'}</div>`;
+function render(){const q=$('#q').value.trim().toLowerCase(),c=$('#fc').value,a=$('#fa').value,m=$('#fm').value,b=$('#fb').value;
+ const rs=DATA.filter(r=>(!q||r.app.toLowerCase().includes(q))&&(!c||r.category===c)&&(!a||r.access_coarse_value===a||(a==='unknown'&&r.access_coarse_value!=='self_serve'&&r.access_coarse_value!=='gated'))&&(!m||r.official_mcp_value===m)&&(!b||(b==='proven'?(r.buildability==='buildable_now'&&r.access_model_tier==='verified'):r.buildability===b)));
+ $('#count').textContent=`${rs.length} of ${N} apps`;
+ $('#grid tbody').innerHTML=rs.map(r=>`<tr class="r" tabindex="0" data-id="${r.id}"><td><b>${esc(r.app)}</b><span class="one">${esc(r.desc)}</span></td><td>${esc(list(r.auth_methods_value))}</td><td>${esc(cl(r.access_coarse_value))}<br>${chip(r.access_model_tier)}</td><td>${esc(list(r.api_type_value))}</td><td>${esc(cl(r.official_mcp_value))}<br>${chip(r.official_mcp_tier)}</td><td>${esc(cl(r.buildability))}${r.primary_blocker&&r.primary_blocker!=='none'?`<span class="one">blocker: ${esc(cl(r.primary_blocker))}</span>`:''}</td></tr>`).join('');}
+['#q','#fc','#fa','#fm','#fb'].forEach(s=>$(s).addEventListener('input',render));
+document.addEventListener('click',e=>{const t=e.target.closest('.cat');if(t){$('#q').value='';$('#fa').value=$('#fm').value=$('#fb').value='';$('#fc').value=t.dataset.cat;render();$('#findings').scrollIntoView({behavior:'smooth'})}});
+function toggle(tr){const nx=tr.nextElementSibling;if(nx&&nx.classList.contains('detail')){nx.remove();return}
+ const r=DATA.find(x=>String(x.id)===tr.dataset.id);const d=document.createElement('tr');d.className='detail';
+ d.innerHTML=`<td colspan="6"><div class="note" style="margin-bottom:6px">${esc(r.desc)} · ${esc(CAT[r.category])}</div>${ev('Auth',list(r.auth_methods_value),r.auth_methods_tier,r.auth_methods_evidence_url,r.auth_methods_quote)}${ev('Access',cl(r.access_model_value),r.access_model_tier,r.access_model_evidence_url,r.access_model_quote,r.access_model_note)}${ev('MCP',cl(r.official_mcp_value),r.official_mcp_tier,r.official_mcp_evidence_url,r.official_mcp_quote,r.official_mcp_note)}${ev('API',list(r.api_type_value),r.api_type_tier,r.api_type_evidence_url,r.api_type_quote)}</td>`;tr.after(d);}
+$('#grid tbody').addEventListener('click',e=>{const tr=e.target.closest('tr.r');if(tr&&!e.target.closest('a'))toggle(tr)});
+$('#grid tbody').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('tr.r')){e.preventDefault();toggle(e.target)}});
+render();
+// downloads
+async function dl(name,type,text){
+ try{const d=window.claude&&await window.claude.use('downloads');if(d){await d.save({filename:name,data:text});return}}catch(e){}
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();a.remove()}
+$('#dj').onclick=()=>dl('composio_100_apps.json','application/json',JSON.stringify(DATA,null,1));
+$('#dc').onclick=()=>{const cols=['id','app','category','desc','auth_methods_value','access_coarse_value','access_model_value','access_model_tier','api_type_value','official_mcp_value','official_mcp_tier','buildability','primary_blocker','auth_methods_evidence_url','access_model_evidence_url','official_mcp_evidence_url','api_type_evidence_url'];
+ const q=v=>'"'+String(Array.isArray(v)?v.join('|'):(v==null?'':v)).replace(/"/g,'""')+'"';
+ dl('composio_100_apps.csv','text/csv',[cols.join(',')].concat(DATA.map(r=>cols.map(c=>q(r[c])).join(','))).join('\n'))};
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)document.querySelectorAll('#jump a').forEach(a=>a.classList.toggle('on',a.dataset.s===en.target.id))}),{rootMargin:'-40% 0px -55% 0px'});SEC.forEach(([k])=>io.observe(document.getElementById(k)))}
+</script>
+</body>
+</html>

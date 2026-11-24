@@ -1,0 +1,144 @@
+{
+ "auth_method_distribution": {
+  "bearer_token": 36,
+  "oauth2": 59,
+  "api_key": 33,
+  "basic": 14,
+  "mtls": 1,
+  "none": 4,
+  "jwt_service_account": 1,
+  "signed_request": 1
+ },
+ "access_by_category": {
+  "crm_sales": {
+   "unknown": 3,
+   "self_serve": 7
+  },
+  "support": {
+   "unknown": 3,
+   "self_serve": 5,
+   "gated": 2
+  },
+  "comms": {
+   "self_serve": 8,
+   "unknown": 2
+  },
+  "marketing": {
+   "gated": 5,
+   "unknown": 1,
+   "self_serve": 4
+  },
+  "ecommerce": {
+   "self_serve": 5,
+   "unknown": 3,
+   "gated": 2
+  },
+  "data_seo_scraping": {
+   "self_serve": 6,
+   "unknown": 3,
+   "gated": 1
+  },
+  "dev_infra": {
+   "self_serve": 9,
+   "unknown": 1
+  },
+  "productivity_pm": {
+   "self_serve": 9,
+   "unknown": 1
+  },
+  "finance": {
+   "self_serve": 4,
+   "unknown": 5,
+   "gated": 1
+  },
+  "ai_research_media": {
+   "unknown": 1,
+   "gated": 1,
+   "self_serve": 8
+  }
+ },
+ "primary_blocker_counts": {
+  "unknown": 23,
+  "none": 63,
+  "account": 3,
+  "app_review": 8,
+  "missing_auth": 2,
+  "partnership_required": 1
+ },
+ "buildability_counts_by_tier": {
+  "unknown (unknown)": 25,
+  "buildable_now (inferred)": 56,
+  "needs_partnership (inferred)": 3,
+  "buildable_after_approval (inferred)": 3,
+  "buildable_now (verified)": 7,
+  "buildable_after_approval (verified)": 5,
+  "needs_partnership (verified)": 1
+ },
+ "tier_breakdown_per_field": {
+  "auth_methods": {
+   "inferred": 31,
+   "verified": 65,
+   "unknown": 4
+  },
+  "access_model": {
+   "unknown": 23,
+   "inferred": 64,
+   "verified": 13
+  },
+  "official_mcp": {
+   "manually_verified": 7,
+   "verified": 43,
+   "inferred": 19,
+   "unknown": 31
+  },
+  "api_type": {
+   "inferred": 37,
+   "verified": 42,
+   "unknown": 21
+  }
+ },
+ "official_mcp_values": {
+  "official": 66,
+  "none_found": 3,
+  "unknown": 31
+ },
+ "composio_catalog_coverage": {
+  "matched": 81,
+  "total": 100
+ },
+ "gated_apps": {
+  "count": 12,
+  "by_tier": {
+   "inferred": 6,
+   "verified": 6
+  },
+  "apps": [
+   "Pylon",
+   "Gorgias",
+   "Google Ads",
+   "Meta Ads",
+   "LinkedIn Ads",
+   "Pinterest",
+   "Threads (Meta)",
+   "Magento (Adobe Commerce)",
+   "Squarespace",
+   "Waterfall.io",
+   "Brex",
+   "Otter AI"
+  ]
+ },
+ "easy_wins_summary": {
+  "verified_count": 7,
+  "verified_apps": [
+   "Telegram",
+   "Shopify",
+   "DataForSEO",
+   "Airtable",
+   "Consensus",
+   "Reducto",
+   "higgsfield"
+  ],
+  "inferred_count": 56,
+  "total": 63
+ }
+}

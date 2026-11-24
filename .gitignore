@@ -42,3 +42,9 @@ data/evidence/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Scratch and temporary packs
+scratch/
+submission_pack/
+*.zip
+
